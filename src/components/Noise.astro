@@ -1,0 +1,18 @@
+<div class="noise">
+    <slot></slot>
+</div>
+<style>
+    .noise::before {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 1000vh;
+        content: '';
+        /* you can control opacity of noise  */
+        opacity: 0.01;
+        z-index: 1000;
+        pointer-events: none;
+        background: url(public/noise.gif);
+      }
+</style>

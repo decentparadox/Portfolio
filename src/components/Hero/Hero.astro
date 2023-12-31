@@ -1,0 +1,126 @@
+---
+import { Menu } from 'src/components/Nav/Menu.tsx'
+import Marquee from './components/marquee.astro';
+---
+<div class="w-[100%] herosec overflow-hidden flex flex-col items-center justify-start py-4 px-[3%] box-border">
+  <main class="self-stretch flex flex-col items-center justify-start pt-0 py-0 px-0 pb-[0.20001220703125px] gap-[27px]">
+    <header class="herot self-stretch flex flex-row items-center justify-between text-left text-3xs-2 text-gray-100 font-inter">
+      <div class="relative leading-[12px] uppercase flex items-center  h-6 shrink-0">
+        <span class="">
+          <p class="m-0">Folio 2k24</p>
+          
+        </span>
+      </div>
+      <div class=" relative text-3xs-5 leading-[12px] w-[65%] uppercase text-center flex items-center justify-center  h-6 shrink-0">
+          <span class="w-[65%] left-[12.5%]"> <Marquee></span>
+        <!-- <Marquee />         -->
+      </div>
+      <div class="h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
+        <div class="relative leading-[12px] uppercase flex items-center  h-3 shrink-0">
+          <Menu  client:load>
+        </div>
+      </div>
+      
+    </header>
+    <section
+      class="self-stretch overflow-hidden flex flex-col items-center justify-start gap-[87px] text-left  text-tomato font-kleemax-demo"
+      id="notnav"
+    >
+      <div class="self-stretch flex flex-col items-center justify-start gap-[18px]">
+        <div class="self-stretch relative h-px">
+          <div class="absolute top-[0px] left-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-l-[1px]" />
+          <div class="absolute top-[0px] right-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-r-[1px]" />
+        </div>
+        <div class="self-stretch overflow-hidden flex flex-col items-start justify-start gap-[11px]">
+          <div class="self-stretch relative h-[257.8px] overflow-hidden shrink-0">
+            <div class="absolute top-[calc(50%_-_232.9px)]  w-[1804px] h-[429px] overflow-hidden">
+              <div class="x2023 absolute text-[125px] md:text-[250px] xl:text-[395px] top-[34px] xl:top-[54px] leading-[180px] flex items-center w-[2108px] h-[419px] text-center font-kleemax-demo">
+                2024
+              </div>
+              <img
+                class="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] max-w-full overflow-hidden max-h-full object-cover hidden"
+                alt=""
+                src="/vector@2x.png"
+              />
+            </div>
+            <div class="absolute w-[1804.4px] overflow-hidden flex flex-col top-[95px] xl:top-[40px] justify-center items-start text-black">
+              <h1
+                class="text-[42px] md:text-[70px] xl:text-[119px] text-center"
+                id="decp"
+              >
+                DECENT PARADOX
+              </h1>
+            </div>
+          </div>
+          <div class="self-stretch relative h-px">
+            <div class="absolute bottom-[1px] left-[0px] box-border w-[101px] h-[101px] border-b-[1px] border-solid border-darkslategray border-l-[1px]" />
+            <div class="absolute right-[0px] bottom-[1px] box-border w-[101px] h-[101px] border-r-[1px] border-solid border-darkslategray border-b-[1px]" />
+          </div>
+        </div>
+      </div>
+      <div class=" self-stretch relative h-[18px] text-sm bottom-[60px] font-inter">
+        <!-- <div class="absolute top-[0px] left-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-l-[1px]" />
+        <div class="absolute top-[0px] right-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-r-[1px]" /> -->
+        <header class="herot self-stretch flex flex-row items-center justify-between text-left text-3xs-2  font-inter">
+          <div class="relative leading-[12px] uppercase flex items-center w-[90.2px] h-6 shrink-0">
+            <span class="w-full">
+              <a href="/blog">Blog</a>
+            </span>
+          </div>
+          <div class="w-[74.8px] h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
+            <div class="relative leading-[12px] uppercase flex items-center w-[58.5px] h-3 shrink-0">
+              
+            </div>
+          </div>
+          <div class="relative text-3xs-5 leading-[12px] uppercase text-right flex items-center w-[108.8px] h-6 shrink-0">
+            <span class="w-full">
+              <a href="/projects">Projects</a>
+            </span>
+          </div>
+        </header>
+
+      </div>
+      <div class="self-stretch relative flex flex-row items-center justify-start bottom-[80px] gap-[242px]">
+        <div class="flex-1 flex flex-col items-center justify-start gap-[287px]">
+          <div class="self-stretch relative h-px">
+            <div class="absolute top-[0px] left-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-l-[1px]" />
+            <div class="absolute top-[0px] right-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-r-[1px]" />
+          </div>
+          <div class="self-stretch relative h-px">
+            <div class="absolute bottom-[1px] left-[0px] box-border w-[101px] h-[101px] border-b-[1px] border-solid border-darkslategray border-l-[1px]" />
+            <div class="absolute right-[0px] bottom-[1px] box-border w-[101px] h-[101px] border-r-[1px] border-solid border-darkslategray border-b-[1px]" />
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-center justify-start gap-[287px]">
+          <div class="self-stretch relative h-px">
+            <div class="absolute top-[0px] left-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-l-[1px]" />
+            <div class="absolute top-[0px] right-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-r-[1px]" />
+          </div>
+          <div class="self-stretch relative h-[17px]">
+            <div class="absolute bottom-[1px] left-[0px] box-border w-[101px] h-[101px] border-b-[1px] border-solid border-darkslategray border-l-[1px]" />
+            <div class="absolute right-[0px] bottom-[1px] box-border w-[101px] h-[101px] border-r-[1px] border-solid border-darkslategray border-b-[1px]" />
+          </div>
+        </div>
+      </div>
+
+      <header class="herot self-stretch flex flex-row items-center justify-between text-left text-3xs-2 relative bottom-[140px]  font-inter">
+        <div class="relative leading-[12px] uppercase flex items-center w-[90.2px] h-6 shrink-0">
+          <span class="w-full">
+            <a href="/blog">Blog</a>
+          </span>
+        </div>
+        <div class="w-[74.8px] h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
+          <div class="relative leading-[12px] uppercase flex items-center w-[58.5px] h-3 shrink-0">
+            
+          </div>
+        </div>
+        <div class="relative text-3xs-5 leading-[12px] uppercase text-right flex items-center w-[108.8px] h-6 shrink-0">
+          <span class="w-full">
+            <a href="/projects">Projects</a>
+          </span>
+        </div>
+      </header>
+
+    </section>
+  </main>
+</div>

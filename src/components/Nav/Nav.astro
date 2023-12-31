@@ -1,0 +1,68 @@
+---
+
+import { Menu } from './Menu.tsx'
+---
+    <div class="nav flex pt-4 justify-between items-start text-[10px] lg:text-[14px] xl:text-[16px]">
+        <div>
+            <img src="">
+            <div class="logo-container">
+                <div class="logo"><h1>decent</h1><h1>paradox</h1></div>
+      
+                
+              </div>
+
+              <div
+                class=' logo-name chngcontainer shrink-0 flex rounded-3xl justify-start align-start  w-[3000px] text-[12px] lg:text-[14px] lg:w-[200px] xl:text-[16px]'
+                style=' 
+                    color:var(--foreground);
+                    font-family: 'GeistRegular';'
+                ><span id='change'></span>
+            </div>
+        </div>
+        <Menu client:load />
+    </div>
+<style>
+    .logo-container{
+
+    }
+    .logo h1 {
+  font-family: "Kleemax";
+  text-transform: uppercase;
+  font-size: 40px;
+  color: var(--foreeground);
+  line-height: 90%;
+  /* left:50%;
+  transform:translateX(-50%); */
+}
+
+.logo-name {
+  color: var(--foreground);
+}
+
+.nav{
+    width: calc(100% - 112px);
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 64px;
+
+
+}
+</style>
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    ScrollTrigger.create({
+        animation: gsap.from(".logo", {
+          y: "50vh",
+          scale: 6,
+          yPercent: -50,
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center",
+      });
+</script>

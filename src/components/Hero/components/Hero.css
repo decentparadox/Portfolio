@@ -1,0 +1,27 @@
+#change{
+    content: " ";
+  }
+  #change:after {
+    content: 'Game Developer ////';
+  
+    animation: change 6s linear infinite;
+  }
+  @keyframes change {
+    0% {
+      content: 'UI/UX Designer ////';
+    }
+    25% {
+      content: 'CTF Player ////';
+    }
+    50% {
+      content: 'Graphic Designer ///';
+    }
+    75% {
+      content: 'Web Developer ////';
+    }
+   
+  }
+.rightcol span{
+  color: var(--accent);
+}
+

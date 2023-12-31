@@ -1,0 +1,108 @@
+<h1 class='counter'>29</h1>
+
+    <div class='overlay z-40'>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+    </div>
+    <script>
+        import { gsap } from "gsap";
+
+function startLoader() {
+  var counterElement = document.querySelector('.counter') as HTMLElement | null;
+  var overlay = document.querySelector('.overlay') as HTMLElement | null;
+
+  var currentValue = 0;
+
+  function updateCounter() {
+    if (currentValue === 100) {
+      counterElement?.remove();
+      setTimeout(() => {
+        overlay?.remove();
+      }, 4000);
+      return;
+    }
+
+    currentValue += Math.floor(Math.random() * 10) + 1;
+
+    if (currentValue > 100) {
+      currentValue = 100;
+    }
+
+    counterElement!.textContent = currentValue.toString();
+
+    var delay = Math.floor(Math.random() * 200) + 50;
+    setTimeout(updateCounter, delay);
+  }
+
+  updateCounter();
+}
+
+startLoader();
+
+gsap.to('.counter', 0.25, {
+  delay: 3.5,
+  opacity: 0,
+});
+
+gsap.to('.bar', 1.5, {
+  delay: 3.5,
+  height: 0,
+  stagger: {
+    amount: 0.5,
+  },
+  ease: 'power4.inOut',
+});
+
+gsap.from('.h1', 1.5, {
+  delay: 4,
+  y: 700,
+  stagger: {
+    amount: 0.5,
+  },
+  ease: 'power4.inOut',
+});
+
+gsap.from('.hero', 2, {
+  delay: 4.5,
+  y: 400,
+  ease: 'power4.inOut',
+});
+
+    </script>
+    <style>
+          .overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 20;
+        display: flex;
+      }
+
+      .bar {
+        width: 10vw;
+        height: 105vh;
+        background: var(--foreground);
+      }
+
+      .counter {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        color: var(--background);
+        padding: 0.2em 0.4em;
+        font-size: 20vw;
+        font-family: 'Kleemax';
+        z-index: 10000;
+      }
+    </style>

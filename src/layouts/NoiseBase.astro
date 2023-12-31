@@ -1,0 +1,24 @@
+---
+import BaseHead from './BaseHead.astro';
+import Noise from '../components/Noise.astro'
+
+export interface Props {
+  head: {
+    title: string;
+    description: string;
+  };
+}
+---
+
+<html lang='en'>
+  <head>
+    <BaseHead />
+    <link rel='stylesheet' href='src/styles/global.css' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body class='overflow-x-hidden'>
+    <Noise>
+      <slot></slot>  
+    </Noise>
+  </body>
+</html>

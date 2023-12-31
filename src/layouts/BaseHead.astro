@@ -1,0 +1,106 @@
+---
+// eslint-disable-next-line import/no-unresolved
+import '../styles/global.css';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { AstroSeo } from '@astrolib/seo';
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title='Portfolio | Sasank Reddy | DecentParadox'
+  description='Portfolio website for Sasank reddy aka DecentParadox'
+  canonical='https://www.decentparadox.tech'
+  openGraph={{
+    url: 'https://www.decentparadox.tech',
+    title: 'Open Graph Title',
+    description: 'Open Graph Description',
+    images: [
+      {
+        url: 'https://www.lexingtonthemes.com/opengraph/social-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Social open graph',
+        type: 'image/jpeg',
+      },
+      {
+        url: 'https://www.lexingtonthemes.com/opengraph/twitter-og.jpg',
+        width: 4096,
+        height: 4096,
+        alt: 'Twitter open graph',
+        type: 'image/jpeg',
+      },
+      { url: 'https://www.lexingtonthemes.com/opengraph/social-og.jpg' },
+      { url: 'https://www.lexingtonthemes.com/opengraph/twitter-og.jpg' },
+    ],
+    site_name: 'Sasank Reddy | Portfolio',
+  }}
+  twitter={{
+    handle: '@decentparadox',
+    site: '@site',
+    cardType: 'summary_large_image',
+  }}
+/>
+
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width' />
+<meta charset='UTF-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta name='author' content='Sasank Reddy' />
+<meta name='your keywords' content='portfolio, astro' />
+<!-- Favicon guidelines generated with https://favicon.io/ -->
+<link
+  rel='apple-touch-icon'
+  sizes='180x180'
+  href='/favicons/apple-touch-icon.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='32x32'
+  href='/favicons/favicon-32x32.png'
+/>
+<link
+  rel='icon'
+  type='image/png'
+  sizes='16x16'
+  href='/favicons/favicon-16x16.png'
+/>
+<link rel='manifest' href='/favicons/site.webmanifest' />
+<link rel='mask-icon' href='/favicons/safari-pinned-tab.svg' color='#ffffff' />
+<meta name='msapplication-TileColor' content='#ffffff' />
+<meta name='theme-color' content='#ffffff' />
+
+<!-- HTML in your document's head -->
+<link rel='preconnect' href='https://rsms.me/' />
+<link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
+<link rel='stylesheet' href='https://fonts.cdnfonts.com/css/a-255' />
+
+
+<link
+  rel='stylesheet'
+  href='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css'
+/>
+
+
+
+<!-- <link
+  href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
+  rel='stylesheet'
+  integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC'
+  crossorigin='anonymous'
+/> -->
+
+
+<!-- <script
+  src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+  integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM'
+  crossorigin='anonymous'
+>
+
+</script> -->
+
+<!-- Remove analytics tag -->
