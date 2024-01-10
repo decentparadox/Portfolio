@@ -4,8 +4,7 @@ import Bordered from 'src/layouts/Bodered.astro'
 import bar from 'public/hero/bar.svg'
 import Intern from '@/components/Hero/components/international.astro'
 import Restrict from '@/components/Hero/components/restricted.astro'
-import Cross from '@/components/Hero/components/Crosss.astro'
-
+import '../Hero/components/Hero.css'
 ---
 <div class="w-[100%] h-screen herosec overflow-hidden flex flex-col items-center justify-start py-4 px-[3%] box-border">
   <main class="self-stretch flex flex-col items-center justify-start pt-0 py-0 px-0 pb-[0.20001220703125px] gap-[27px]">
@@ -15,7 +14,7 @@ import Cross from '@/components/Hero/components/Crosss.astro'
       id="notnav"
 
     >
-      <Fragment class="">
+      <Fragment >
         <Bordered > 
           <div class="self-stretch overflow-hidden flex flex-col items-center justify-center gap-[11px]">
           <div class="self-stretch relative h-[257.8px] overflow-hidden flex items-center justify-center shrink-0">
@@ -44,17 +43,17 @@ import Cross from '@/components/Hero/components/Crosss.astro'
         <!-- <div class="absolute top-[0px] left-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-l-[1px]" />
         <div class="absolute top-[0px] right-[0px] box-border w-[101px] h-[101px] border-t-[1px] border-solid border-darkslategray border-r-[1px]" /> -->
         <header class="herot self-stretch flex flex-row items-center justify-between text-left text-3xs-2  font-inter">
-          <div class="relative leading-[12px] uppercase flex items-center w-[90.2px] h-6 shrink-0">
+          <div class="relative leading-[12px] uppercase flex items-center  h-6 shrink-0">
             <span class="w-full">
               <a href="/blog">Blog</a>
             </span>
           </div>
-          <div class="w-[74.8px] h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
-            <div class="relative leading-[12px] uppercase flex items-center w-[58.5px] h-3 shrink-0">
-              
+          <div class=" h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
+            <div class="relative leading-[12px] uppercase flex items-center  h-3 shrink-0">
+              <p><span id="change"></span></p>
             </div>
           </div>
-          <div class="relative text-3xs-5 leading-[12px] uppercase text-right flex items-center w-[108.8px] h-6 shrink-0">
+          <div class="relative text-3xs-5 leading-[12px] uppercase text-right flex items-center h-6 shrink-0">
             <span class="w-full">
               <a href="/projects">Projects</a>
             </span>
@@ -85,27 +84,27 @@ import Cross from '@/components/Hero/components/Crosss.astro'
                   
               </div>
             </div>
-            <h3 class="pt-1">Keep Scrolling</h3>
+            <h3 class="pt-1" style="color: var(--accent);">Keep Scrolling</h3>
           </div>
         </div>
         <div class=" h-6 flex  items-start justify-start py-0  box-border text-3xs-7 text-black">
           <div class="anim2 overflow-hidden"><Restrict /></div>
 
-          <div class="logo overflow-hidden px-6 "><svg width="45" height="45" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="logo  h-8 px-6 "><svg width="45" height="45" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24.7013 115.415C26.2305 117.956 31.5028 119.634 48.772 114.969C53.4576 113.702 56.9142 109.674 57.5078 104.796L68.0941 17.6201C66.5229 31.7718 62.3889 52.6703 50.008 74.1422C37.1171 96.5273 21.105 109.419 24.7013 115.415Z" fill=""/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7013 115.415C26.2305 117.956 31.5028 119.634 48.772 114.969C53.4576 113.702 56.9142 109.674 57.5078 104.796L68.0941 17.6201C66.5229 31.7718 62.3889 52.6703 50.008 74.1422C37.1171 96.5273 21.105 109.419 24.7013 115.415Z" fill=""/>
             <path d="M103.29 13.5848C101.76 11.0433 96.4877 9.36551 79.2185 14.0309C74.5329 15.2981 71.0763 19.3262 70.4827 24.2039L59.8964 111.38C61.4675 97.2282 65.6016 76.3297 77.9826 54.8578C90.8802 32.4727 106.893 19.5811 103.29 13.5848Z" fill=""/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M103.29 13.5848C101.76 11.0433 96.4877 9.36551 79.2185 14.0309C74.5329 15.2981 71.0763 19.3262 70.4827 24.2039L59.8964 111.38C61.4675 97.2282 65.6016 76.3297 77.9826 54.8578C90.8802 32.4727 106.893 19.5811 103.29 13.5848Z" fill=""/>
           </svg> </div>
           <!-- International -->
-          <div class="anim2 flex w-[192px] overflow-hidden">
+          <div class="anim2 flex w-[192px] ">
             <Intern />
           </div>
           
             
             
         </div>
-        <div class=" anim3 hidden md:flex w-[100px] h-6 bar relative text-3xs-5 leading-[12px] uppercase text-right  items-center shrink-0">
+        <div class=" anim3 hidden md:flex w-[100px]  h-6 bar relative text-3xs-5 leading-[12px] uppercase text-right  items-center shrink-0">
           <?xml version="1.0" standalone="no"?>
           <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
            "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
@@ -159,22 +158,7 @@ import Cross from '@/components/Hero/components/Crosss.astro'
     </section>
   </main>
 </div>
-<style>
-.arrowfill > svg > path{
-  fill: var(--accent);
-}
-.arrowoutline > svg > path{
-  stroke: var(--accent);
-}
-.logo > svg > path{
-  fill: var(--accent);
-}
-.inter >svg >  g > path{
-  fill: var(--accent);
-  stroke: var(--accent);
-}
 
-</style>
 <script>
 const svgs2 = document.querySelectorAll('.anim2')
 const logo = document.querySelectorAll('.logo')

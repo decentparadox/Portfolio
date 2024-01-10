@@ -2,26 +2,42 @@
     content: " ";
   }
   #change:after {
-    content: 'Game Developer ////';
+    content: 'Game Developer';
   
     animation: change 6s linear infinite;
   }
   @keyframes change {
     0% {
-      content: 'UI/UX Designer ////';
+      content: 'UI/UX Designer';
     }
     25% {
-      content: 'CTF Player ////';
+      content: 'CTF Player';
     }
     50% {
-      content: 'Graphic Designer ///';
+      content: 'Graphic Designer';
     }
     75% {
-      content: 'Web Developer ////';
+      content: 'Web Developer';
     }
    
   }
 .rightcol span{
   color: var(--accent);
 }
+#change{
+  color: var(--foreground);
+}
 
+.arrowfill > svg > path{
+  fill: var(--accent);
+}
+.arrowoutline > svg > path{
+  stroke: var(--accent);
+}
+.logo > svg > path{
+  fill: var(--accent);
+}
+.inter >svg >  g > path{
+  fill: var(--accent);
+  stroke: var(--accent);
+}
