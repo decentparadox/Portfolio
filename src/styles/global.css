@@ -484,6 +484,9 @@ html.dark{
   font-size: 12px;
   
 }
+.inter > path {
+  fill: var(--accent);
+}
 .menu{
   font-family: 'Geist' !important; 
   text-transform: capitalize !important;

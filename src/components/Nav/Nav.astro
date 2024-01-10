@@ -1,68 +1,23 @@
 ---
-
-import { Menu } from './Menu.tsx'
+import { Menu } from 'src/components/Nav/Menu.tsx'
+import Marquee from 'src/components/Hero/components/marquee.astro';
 ---
-    <div class="nav flex pt-4 justify-between items-start text-[10px] lg:text-[14px] xl:text-[16px]">
-        <div>
-            <img src="">
-            <div class="logo-container">
-                <div class="logo"><h1>decent</h1><h1>paradox</h1></div>
+
+<div class="herot pt-7 w-[94%] ml-[3%] self-stretch flex flex-row items-center justify-between text-left text-3xs-2 text-gray-100 font-inter">
+  <div class="relative leading-[12px]  flex items-center  h-6 shrink-0">
+    <span class="">
+      <p class="m-0">Folio 2k24</p>
       
-                
-              </div>
-
-              <div
-                class=' logo-name chngcontainer shrink-0 flex rounded-3xl justify-start align-start  w-[3000px] text-[12px] lg:text-[14px] lg:w-[200px] xl:text-[16px]'
-                style=' 
-                    color:var(--foreground);
-                    font-family: 'GeistRegular';'
-                ><span id='change'></span>
-            </div>
-        </div>
-        <Menu client:load />
+    </span>
+  </div>
+  <div class=" relative text-3xs-5 leading-[12px] w-[65%]  text-center flex items-center justify-center  h-6 shrink-0">
+      <div class="w-[65%] left-[12.5%]"> <Marquee></div>
+    <!-- <Marquee />         -->
+  </div>
+  <div class="h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
+    <div class="relative leading-[12px] uppercase flex items-center  h-3 shrink-0">
+      <Menu  client:load>
     </div>
-<style>
-    .logo-container{
-
-    }
-    .logo h1 {
-  font-family: "Kleemax";
-  text-transform: uppercase;
-  font-size: 40px;
-  color: var(--foreeground);
-  line-height: 90%;
-  /* left:50%;
-  transform:translateX(-50%); */
-}
-
-.logo-name {
-  color: var(--foreground);
-}
-
-.nav{
-    width: calc(100% - 112px);
-    position: relative;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 64px;
-
-
-}
-</style>
-<script>
-    import gsap from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    ScrollTrigger.create({
-        animation: gsap.from(".logo", {
-          y: "50vh",
-          scale: 6,
-          yPercent: -50,
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center",
-      });
-</script>
+  </div>
+  
+</div>

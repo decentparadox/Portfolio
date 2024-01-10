@@ -1,0 +1,8 @@
+[10:33:00 2024-01-07] FETCHING Version 2.29.1
+[10:33:00 2024-01-07] DOWNLOADING https://github.com/spicetify/spicetify-cli/releases/download/v2.29.1/spicetify-2.29.1-linux-amd64.tar.gz
+[10:33:10 2024-01-07] EXTRACTING /home/decentparadox/.spicetify/spicetify.tar.gz
+[10:33:11 2024-01-07] SETTING EXECUTABLE PERMISSIONS TO /home/decentparadox/.spicetify/spicetify
+[10:33:11 2024-01-07] REMOVING /home/decentparadox/.spicetify/spicetify.tar.gz
+[10:33:11 2024-01-07] spicetify path already set in /home/decentparadox/.bashrc, continuing...
+[10:33:11 2024-01-07] spicetify v2.29.1 was installed successfully to /home/decentparadox/.spicetify
+[10:33:11 2024-01-07] Run 'spicetify --help' to get started

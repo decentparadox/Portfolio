@@ -1,12 +1,19 @@
 ---
 import SectionLayout from "@/layouts/SectionLayout.astro";
+import BentoGrid from "./BentoGrid";
+import type { loadRenderer } from "node_modules/astro/dist/core/render";
 ---
-<SectionLayout >
-    <div class="mx-auto bento-md:-mx-[5vw] bento-lg:-mx-[20vw]">
-        
-        
-        <!-- <BentoBox  /> -->
-    </div>
-    
-</SectionLayout >
-    
+
+<BentoGrid client:load>
+      <div id="intro" >Intro content</div>
+      <div id="about-ctfs">About Ctfs</div>
+      <div id="image-1">Image 1 content</div>
+      <div id="discord">Discord</div>
+      <div id="latest-post">Latest Post</div>
+      <div id="image-2">Image 2 content</div>
+      <div id="contributions">Contributions</div>
+      <div id="spotify">Spotify</div>
+      <div id="github">Github</div>
+      <div id="tech">Tech</div>  
+      <div id="twitter">Twitter</div>
+</BentoGrid>

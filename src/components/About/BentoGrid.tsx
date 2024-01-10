@@ -58,8 +58,9 @@ useEffect(() => {
       margin={[16, 16]}
 
     >
+      
       <div key="intro" >Intro content</div>
-      <div key="about-ctfs">About CTFs content</div>
+      <slot name="about-ctfs"></slot>
       <div key="image-1">Image 1 content</div>
       <div key="discord">Discord</div>
       <div key="latest-post">Latest Post</div>
@@ -68,7 +69,7 @@ useEffect(() => {
       <div key="spotify">Spotify</div>
       <div key="github">Github</div>
       <div key="tech">Tech</div>  
-      <div key="twitter">Twitter</div>
+      <div key="twitter">Twitter</div> 
       {/* Add more grid items here */}
     </ResponsiveGridLayout>
   );
