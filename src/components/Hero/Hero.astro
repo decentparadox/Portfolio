@@ -163,6 +163,7 @@ import '../Hero/components/Hero.css'
 const svgs2 = document.querySelectorAll('.anim2')
 const logo = document.querySelectorAll('.logo')
 const svgs3 = document.querySelectorAll('.anim3')
+setTimeout(()=>{
   gsap.fromTo(
   svgs2,
   { 
@@ -205,4 +206,5 @@ gsap.fromTo(
     ease: 'power4.out',
   }
 )
+},4500)
 </script>

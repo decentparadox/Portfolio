@@ -19,7 +19,7 @@ import type { loadRenderer } from "node_modules/astro/dist/core/render";
     </div>
     <div class=" anim4 w-[94%] ml-[3%]  leading-8">
         <div> 
-            <h1 id="tobefitted" class="py-[0.1px] xl:py-4"><span>❤'s</span> coding <span>+</span> storytelling</h1>
+            <h1 id="tobefitted" class="py-[0.1px] xl:py-4"><span> ਂ </span> crafting <span>digital</span> marvels</h1>
         </div>
     </div>
 
@@ -52,12 +52,13 @@ import type { loadRenderer } from "node_modules/astro/dist/core/render";
 
     gsap.to(".anim4 div h1", {
   backgroundPositionX: "0%",
-  stagger: 1,
+  stagger: 3,
   scrollTrigger: {
     trigger: ".anim4 div h1",
-    scrub: 0.2,
+    markers:true,
+    scrub: 2,
     start: "top center",
-    end: "bottom center",
+    end: "bottom bottom",
   }
 });
 
