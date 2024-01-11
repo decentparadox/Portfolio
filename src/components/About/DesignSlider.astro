@@ -1,0 +1,159 @@
+---
+import Bodered from "@/layouts/Bodered.astro";
+---
+<div class="w-[94%] ml-[3%] py-8">
+    <Bodered class=" ">
+        <div class="container w-[52%] ">
+            <div class="indicator"></div>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="public/about/img1.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img2.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img3.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img4.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img5.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img6.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img7.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img8.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img9.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img10.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img11.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img12.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img13.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img14.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img15.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img16.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img17.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img18.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img19.jpeg" alt="" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/about/img20.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+          <style>
+            .container {
+      position: relative;
+      
+      transform-origin: center;
+      margin: 0 auto 2em auto;
+      padding: 1em 0.5em;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--foreground);
+      border-radius: 100%;
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    
+    .gallery {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .gallery-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 1 20px;
+      height: 400px;
+      margin: 0 5px;
+      background: var(--background);
+      overflow: hidden;
+      transition: flex 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    
+    .gallery-item img {
+      width: 400px;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+    }
+    
+          </style>
+          <script>
+            const galleryContainer:any = document.querySelector(".gallery");
+    const galleryItems = galleryContainer.querySelectorAll(".gallery-item");
+    const indicator:any = document.querySelector(".indicator");
+    
+    const defaultItemFlex = "0 1 20px";
+    const hoverItemFlex = "1 1 400px";
+    
+    const updategalleryItems = () => {
+      galleryItems.forEach((item:any) => {
+        let flex = defaultItemFlex;
+    
+        if (item.isHovered) {
+          flex = hoverItemFlex;
+        }
+    
+        item.style.flex = flex;
+      });
+    };
+    
+    galleryItems[0].isHovered = true;
+    updategalleryItems();
+    
+    galleryItems.forEach((item:any) => {
+      item.addEventListener("mouseenter", () => {
+        galleryItems.forEach((otherItem:any) => {
+          otherItem.isHovered = otherItem === item;
+        });
+        updategalleryItems();
+      });
+    });
+    
+    galleryContainer.addEventListener("mousemove", (e:any) => {
+      indicator.style.left = `${
+        e.clientX - galleryContainer.getBoundingClientRect().left
+      }px`;
+    });
+          </script>
+    </Bodered>
+</div>
