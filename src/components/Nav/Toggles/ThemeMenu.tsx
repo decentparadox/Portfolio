@@ -53,7 +53,7 @@ function ThemeMenu({ onChange }: ThemeMenuProps) {
         options={themes}
         onChange={handleThemeChange}
         placeholder="Theme"
-        className="w-[40px] md:w-[80px] xl:w-[130px] text-[10px] lg:text-[14px] xl:text-[16px]"
+        className="w-[40px] md:w-[80px] xl:w-[130px] text-[4px] lg:text-[14px] xl:text-[16px]"
         classNamePrefix="select"
         
         styles = {{
