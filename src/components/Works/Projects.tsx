@@ -231,14 +231,14 @@ const Home = () => {
               <div className="project-link">
                 <div className="project-l">
                   <div className="project-link-img">
-                    <img src="public/about/img1.jpeg" alt="" />
+                    <img src="./Kalser.png" alt="" />
                   </div>
                   <div className="project-name">
                     <h2>Kalser</h2>
                   </div>
                 </div>
                 <div className="project-date">
-                  <p>experience</p>
+                  <p>Automatic WSL Installer</p>
                   <p>/2023</p>
                 </div>
                 <div className="project-dir">
@@ -249,18 +249,18 @@ const Home = () => {
           </div>
 
           <div className="project-item">
-            <a  href="/project">
+            <a  href="/Projects/De2De">
               <div className="project-link">
                 <div className="project-l">
                   <div className="project-link-img">
-                    <img src={Project2Img} alt="" />
+                    <img src="./De2De.png" alt="" />
                   </div>
                   <div className="project-name">
                     <h2>De2De</h2>
                   </div>
                 </div>
                 <div className="project-date">
-                  <p>development</p>
+                  <p>Linux Customization Tool</p>
                   <p>/2024</p>
                 </div>
                 <div className="project-dir">
@@ -271,19 +271,19 @@ const Home = () => {
           </div>
 
           <div className="project-item">
-            <a  href="/project">
+            <a  href="/Projects/Orca">
               <div className="project-link">
                 <div className="project-l">
                   <div className="project-link-img">
-                    <img src={Project3Img} alt="" />
+                    <img src="./Orca.png" alt="" />
                   </div>
                   <div className="project-name">
                     <h2>Orca</h2>
                   </div>
                 </div>
                 <div className="project-date">
-                  <p>portfolio</p>
-                  <p>/2019</p>
+                  <p>Astro integration for Graphic Designers</p>
+                  <p>/2024</p>
                 </div>
                 <div className="project-dir">
                   <p>&#8599;</p>

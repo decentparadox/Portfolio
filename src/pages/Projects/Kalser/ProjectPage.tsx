@@ -56,7 +56,7 @@ const Project = () => {
             }}
           >
             <motion.img
-              src="../../about/img1.jpeg"
+              src="../../Kalser.png"
               alt=""
               initial={{
                 scale: 1.5,
@@ -98,15 +98,10 @@ const Project = () => {
             }}
           >
             <p>
-              <b>impressions</b>
+              <b>About</b>
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              nobis itaque laboriosam! Temporibus esse eius iusto voluptatum
-              maiores at asperiores, quo quos omnis delectus cumque consequuntur
-              provident dolores minus tenetur quisquam rem odit. Aut unde velit
-              sint natus recusandae eos! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit.
+             Coming soon
             </p>
           </motion.div>
         </div>
