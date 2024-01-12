@@ -10,8 +10,8 @@ import {
   NavigationMenuList,
 
 } from "@/components/ui/navigation-menu"
-import { ModeToggle } from '@/components/ModeToggle';
-import ThemeSwitcher from './ThemeMenu.tsx'
+import { ModeToggle } from '@/components/Nav/Toggles/ModeToggle.tsx';
+import ThemeSwitcher from './Toggles/ThemeMenu.tsx'
 
 
 const components: { title: string; href: string; description: string }[] = [

@@ -1,5 +1,7 @@
 # Astro with Tailwind
 
+
+
 ```sh
 npm create astro@latest -- --template with-tailwindcss
 ```

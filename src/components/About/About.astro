@@ -1,5 +1,4 @@
 ---
-import SectionLayout from "@/layouts/SectionLayout.astro";
 import type { loadRenderer } from "node_modules/astro/dist/core/render";
 import DesignSlider from "./DesignSlider.astro";
 ---
@@ -26,58 +25,41 @@ import DesignSlider from "./DesignSlider.astro";
     <DesignSlider/>
     <div class=" anim4 w-[94%] ml-[3%]  leading-8">
         <div> 
-            <h1 id="tobefitted" class="py-[0.1px] xl:py-7">i also design <span> ↑</span>  <span>stuff</span> </h1>
+            <h1 id="tobefitted" class="py-[0.1px] xl:py-7">designs  <span> that ↑</span> i really  <span>♥</span> </h1>
+        </div>
+    </div>
+    <div class=" anim4 w-[94%] ml-[3%]  leading-8">
+        <div> 
+            <h1 id="tobefitted" class="py-[0.1px] xl:py-7">and projects that iam really  <span> proud ↭ </span> of  </h1>
         </div>
     </div>
 
-
-
-    <!-- <div class="w-[93%] ml-[3%] leading-[180px] ">
-        <div class="flex">
-            <div class="w-[60%]"> 
-                <div>
-                    <h1 id="tobefitted" class="">Loves</h1>
-                    <div class="leading-[100px]">
-                        <h1 id="tobefitted" class="">music</h1>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="w-[40%]">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2aEuA8PSqLa17Y4hKPj5rr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </div>
-       
-    </div> -->
 </section>
 <script>
     import fitty from "fitty"
     
     const to_be_fitted = document.querySelectorAll("#tobefitted")
     fitty("#tobefitted")
-    gsap.registerPlugin(ScrollTrigger);
+//     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(".anim4 div h1", {
-  backgroundPositionX: "0%",
-  stagger: 3,
-  scrollTrigger: {
-    trigger: ".anim4 div h1",
-    scrub: 2,
-    start: "top center",
-    end: "bottom bottom",
-  }
-});
+//     gsap.to(".anim4 div h1", {
+//   backgroundPositionX: "0%",
+//   stagger: 3,
+//   scrollTrigger: {
+//     trigger: ".anim4 div h1",
+//     scrub: 2,
+//     start: "top center",
+//     end: "bottom bottom",
+//   }
+// });
 
 
 </script>
 <style>
     #tobefitted > span{
         font-family: 'Geist';
-
-
     }
-   html.dark .anim4 > div > h1 {
+   /* html.dark .anim4 > div > h1 {
         background: linear-gradient(
     to right,
     var(--foreground),
@@ -103,6 +85,6 @@ import DesignSlider from "./DesignSlider.astro";
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  }
+  } */
     
 </style>

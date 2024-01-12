@@ -1,80 +1,27 @@
 ---
-// Component Imports
-// import Hero from '../components/Hero/Hero.astro';
-// import Lp from '../components/Hero/Lp.astro';
+
 
 import Base from '../layouts/Base.astro'
-// import SectionLayout from 'src/layouts/SectionLayout.astro'
 import '../styles/global.css'
 import About from 'src/components/About/About.astro';
-import Footer from 'src/components/Footer/footer.astro'
+import Footer from '@/components/Footer/Footer.astro'
 import Nav from 'src/components/Nav/Nav.astro'
-// import Navbar from '@/components/Nav/FloatingNav.jsx'
+import Projects from "src/components/Works/Project.astro"
 import Hero from 'src/components/Hero/Hero.astro'
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <Base class="overflow-x-hidden">
-	<!-- <SectionLayout> -->
-		<!-- <Navbar client:load /> -->
-		<!-- <div class="navi" style="width: calc(100%-112px);margin-left: 64px;">
-			<div class="nav flex pt-4 justify-between items-start text-[10px] lg:text-[14px] xl:text-[16px] ">
-				<div>
-					<img src="">
-					
-		
-					 
-				</div>
-				<Menu client:load />
-			</div>
-			<div class="logo-container">
-				<div class="logo"><h1>decent<br>paradox</h1></div>
-				<div
-			  class=' logo-name chngcontainer shrink-0 flex rounded-3xl justify-start align-start  w-[3000px] text-[12px] lg:text-[14px] lg:w-[200px] xl:text-[16px]'
-			  style=' 
-				  color:var(--foreground);
-				  font-family: 'GeistRegular';'
-			  ><span id='change'></span>
-		  </div>
-			  </div>
-			  
-		</div> -->
-
-		<!-- <Nav /> -->
 		<div class="container"></div>
-			<!-- <Hero /> -->
 			<Nav />
 			<Hero />
 			<About />
-			<div style="width: calc(100% - 96px); margin-left: 48px; margin-top: 64px;">
-				<!-- <Bento client:load/> -->
-			</div>
+			<Projects />
 			<Footer />
-
-		<!-- <Lp /> -->
-		
-		<div style="width: calc(100% - 96px); margin-left: 48px; margin-top: 64px;">
-			<!-- <Bento client:only/> -->
-		</div>
-		
-		<!-- <About />
-		<Bento client:only/> -->
-	</div>
-	<!-- </SectionLayout> -->
 </Base>
-<style>
-	.logo-container{
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	.navi{
-		width: 100%;
-		position: fixed;
-		z-index: 100;
-		mix-blend-mode: invert;
-	}
-</style>
+
 <script>
 	import  Lenis  from "@studio-freight/lenis";
 	const lenis = new Lenis({

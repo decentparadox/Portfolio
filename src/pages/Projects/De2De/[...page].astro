@@ -1,0 +1,16 @@
+---
+import Project from "./ProjectPage.jsx"
+import Nav from "src/components/Nav/Nav.astro";
+import Noise from "src/components/Noise.astro";
+
+type GetStaticPaths = {
+  paginate: any;
+};
+export async function getStaticPaths({ paginate }: GetStaticPaths) { return paginate("projects", { itemsPerPage: 1 }) }
+const { page } = Astro.props 
+---
+
+<Noise >
+<div class="hidden"> <Nav /> </div>
+<Project client:load />
+</Noise>
