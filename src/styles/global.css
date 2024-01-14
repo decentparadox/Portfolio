@@ -4,11 +4,15 @@
  
 @font-face {
   font-family: "Kleemax";
-  src: url(./fonts/kleemaxdemo.otf);
+  src: url(./fonts/kleemaxdemo.otf); /* src/styles/fonts/TIMMONSNY-Regular.ttf*/
 }
 @font-face {
   font-family: "Geist";
   src: url(./fonts/GeistRegular.otf);
+}
+@font-face {
+  font-family: "Berghan";
+  src: url(./fonts/Geist-Regulare.otf);
 }
 @layer base {
   html {
@@ -16,7 +20,6 @@
   }
   h1 {
     font-family: "Kleemax";
-    text-transform: uppercase;
   }
   :root {
     /* Gruvbox color palette with light background */
