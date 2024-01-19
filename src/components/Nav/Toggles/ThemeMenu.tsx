@@ -32,7 +32,8 @@ function ThemeMenu({ onChange }: ThemeMenuProps) {
     localStorage.setItem('selectedTheme', selectedOption.value);
 
   // Reload the page
-    window.location.reload();
+  // window.location.reload();
+
 
   };
   useEffect(() => {
