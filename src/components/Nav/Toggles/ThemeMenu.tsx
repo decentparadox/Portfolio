@@ -7,7 +7,7 @@ const themes = [
   { value: 'evangelion', label: 'Eva-01' },
   { value: 'catppuccin', label: 'Catppuccin' },
   { value: 'rosepine', label: 'RosePine' },
-  { value: 'bigsur', label: 'BigSur' },
+  // { value: 'bigsur', label: 'BigSur' },
 ];
 
 interface ThemeMenuProps {
