@@ -21,7 +21,7 @@
   const svgs2 = document.querySelectorAll('.anim2')
   const logo = document.querySelectorAll('.logo')
   const svgs3 = document.querySelectorAll('.anim3')
-  const overlay = document.querySelector('.overlay')
+  const overlay:any = document.querySelector('.overlay')
 
   let animationsInitialized = false;
 
@@ -140,6 +140,7 @@
     },
     onComplete: () => {
         animateSvgs()
+        setTimeout(overlay.style.display = 'none', 1000)
     },
     ease: 'power4.inOut',
     });
@@ -159,7 +160,6 @@
     ease: 'power4.inOut',
     });
   }
-  overlay?.remove()
 });
 
 </script>

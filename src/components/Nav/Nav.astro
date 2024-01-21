@@ -1,6 +1,8 @@
 ---
-import { Menu } from 'src/components/Nav/Menu.tsx'
 import Marquee from './Marquee.astro';
+import Mode from './Toggles/Mode.astro';
+import ThemeSwitcher from './Toggles/ThemeMenu.tsx'
+
 ---
 
 <div class="herot pt-7 w-[94%] ml-[3%] self-stretch flex flex-row items-center justify-between text-left text-3xs-2 text-gray-100 font-inter">
@@ -16,7 +18,10 @@ import Marquee from './Marquee.astro';
   </div>
   <div class="h-6 flex flex-col items-start justify-start py-0 px-[0.2299957275390625px] box-border text-3xs-7 text-black">
     <div class="relative leading-[12px] uppercase flex items-center  h-3 shrink-0">
-      <Menu  client:load>
+      <Mode />
+      <ThemeSwitcher  client:load>
+
+
     </div>
   </div>
   

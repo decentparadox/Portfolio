@@ -22,15 +22,19 @@ function ThemeMenu({ onChange }: ThemeMenuProps) {
     
 
     if (onChange) {
-      onChange(selectedOption.value);
+      if (selectedOption) {
+        onChange(selectedOption.value);
+      }
       document.documentElement.style.transition = 'background-color 5s ease';
     }
     document.documentElement.style.transition = 'background-color 5s ease';
     // Update the HTML tag with the selected theme
+    if (selectedOption) {
+
     document.documentElement.classList.remove(...themes.map(theme => theme.value));
     document.documentElement.classList.add(selectedOption.value);
     localStorage.setItem('selectedTheme', selectedOption.value);
-
+    }
   // Reload the page
   // window.location.reload();
 
