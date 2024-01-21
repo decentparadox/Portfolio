@@ -53,7 +53,7 @@ function ThemeMenu({ onChange }: ThemeMenuProps) {
 
   return (
     <div className="">
-      <Select
+      <Select aria-label="ThemeChanger"
         value={selectedTheme}
         options={themes}
         onChange={handleThemeChange}
