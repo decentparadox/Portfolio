@@ -21,6 +21,7 @@
   const svgs2 = document.querySelectorAll('.anim2')
   const logo = document.querySelectorAll('.logo')
   const svgs3 = document.querySelectorAll('.anim3')
+  const overlay = document.querySelector('.overlay')
 
   let animationsInitialized = false;
 
@@ -158,6 +159,7 @@
     ease: 'power4.inOut',
     });
   }
+  overlay?.remove()
 });
 
 </script>
