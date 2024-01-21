@@ -1,84 +1,178 @@
-<h1 class='counter'>29</h1>
+<div class="loader">
+	<div class="counter">0</div>
+</div>
+<div class='overlay z-40'>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+  </div>
+<script>
+  import { gsap } from "gsap";
+  document.addEventListener("DOMContentLoaded", () => {
+  const counter:any = document.querySelector(".counter");
+  const loader = document.querySelector(".loader");
+  const svgs2 = document.querySelectorAll('.anim2')
+  const logo = document.querySelectorAll('.logo')
+  const svgs3 = document.querySelectorAll('.anim3')
 
-    <div class='overlay z-40'>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-    </div>
-    <script>
-        import { gsap } from "gsap";
+  const introTag:any = document.querySelector(".intro");
+  let animationsInitialized = false;
 
-function startLoader() {
-  var counterElement = document.querySelector('.counter') as HTMLElement | null;
-  var overlay = document.querySelector('.overlay') as HTMLElement | null;
-
-  var currentValue = 0;
-
-  function updateCounter() {
-    if (currentValue === 100) {
-      counterElement?.remove();
-      setTimeout(() => {
-        overlay?.remove();
-      }, 4000);
-      return;
-    }
-
-    currentValue += Math.floor(Math.random() * 10) + 1;
-
-    if (currentValue > 100) {
-      currentValue = 100;
-    }
-
-    counterElement!.textContent = currentValue.toString();
-
-    var delay = Math.floor(Math.random() * 200) + 50;
-    setTimeout(updateCounter, delay);
+  function shuffleText(finalText:any, duration:any, callback:any) {
+    let i = 0;
+    const shuffleInterval = setInterval(() => {
+      if (i < duration) {
+        counter.innerHTML = Math.random().toString(36).substring(2, 8);
+        i++;
+      } else {
+        clearInterval(shuffleInterval);
+        counter.innerHTML = finalText;
+        if (callback) callback();
+      }
+    }, 100);
   }
 
-  updateCounter();
+  function removeLetters() {
+    let text = counter.innerHTML;
+    const removeInterval = setInterval(() => {
+      if (text.length > 0) {
+        text = text.substring(0, text.length - 1);
+        counter.innerHTML = text;
+      } else {
+        clearInterval(removeInterval);
+        if (!animationsInitialized) {
+          animateSvgs();
+        }
+        fadeOutLoader();
+      }
+    }, 100);
+  }
+
+  function animateSvgs() {
+    if (animationsInitialized) return;
+    animationsInitialized = true;
+    setTimeout(()=>{
+    gsap.fromTo(
+        svgs2,
+        { 
+            y: 200,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 2.5,
+            ease: 'power4.out',
+        }
+    )
+    gsap.fromTo(
+        logo,
+        { 
+            y: 100,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 1,
+            ease: 'power4.out',
+        }
+    )
+    gsap.fromTo(
+        svgs3,
+        { 
+            y: 200,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 4,
+            ease: 'power4.out',
+        }
+    )
+  }, 1000)
 }
+  
+  
 
-startLoader();
+  gsap.to(counter, {
+    innerHTML: 100 ,
+    duration: 3,
+    snap: "innerHTML",
+    ease: "none",
+    onComplete: () => {
+      setTimeout(
+        () =>
+          shuffleText("Decp", 20, () => {
+            setTimeout(removeLetters, 500);
+          }),
+        500
+      );
+    },
+  });
 
-gsap.to('.counter', 0.25, {
-  delay: 3.5,
-  opacity: 0,
+  function fadeOutLoader() {
+        gsap.to(loader, {
+          opacity: 0,
+          pointerEvents: "none",
+          duration: 0,
+          onComplete: () => {
+          },
+        });
+      
+
+    gsap.to('.bar', 1, {
+    delay: 0.5,
+    height: 0,
+    stagger: {
+        amount: 0.5,
+    },
+    onComplete: () => {
+        animateSvgs()
+    },
+    ease: 'power4.inOut',
+    });
+
+    gsap.from('.h1', 1.5, {
+    delay: 4,
+    y: 700,
+    stagger: {
+        amount: 0.5,
+    },
+    ease: 'power4.inOut',
+    });
+
+    gsap.from('.hero', 2, {
+    delay: 4.5,
+    y: 400,
+    ease: 'power4.inOut',
+    });
+  }
 });
 
-gsap.to('.bar', 1.5, {
-  delay: 3.5,
-  height: 0,
-  stagger: {
-    amount: 0.5,
-  },
-  ease: 'power4.inOut',
-});
-
-gsap.from('.h1', 1.5, {
-  delay: 4,
-  y: 700,
-  stagger: {
-    amount: 0.5,
-  },
-  ease: 'power4.inOut',
-});
-
-gsap.from('.hero', 2, {
-  delay: 4.5,
-  y: 400,
-  ease: 'power4.inOut',
-});
-
-    </script>
-    <style>
-          .overlay {
+</script>
+<style>
+.loader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--foreground);
+  color: var(--background);
+  z-index: 10000;
+}
+.overlay {
         position: fixed;
         width: 100vw;
         height: 100vh;
@@ -86,23 +180,20 @@ gsap.from('.hero', 2, {
         display: flex;
       }
 
-      .bar {
+.bar {
         width: 10vw;
         height: 105vh;
         background: var(--foreground);
       }
+.counter {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  font-size: 40px;
+  padding: 2em;
+  color: var(--background);
+  font-family: 'Kleemax';
+  text-transform: uppercase;
+}
 
-      .counter {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        color: var(--background);
-        padding: 0.2em 0.4em;
-        font-size: 20vw;
-        font-family: 'Kleemax';
-        z-index: 10000;
-      }
-    </style>
+</style>
