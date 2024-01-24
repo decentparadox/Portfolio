@@ -27,16 +27,21 @@
 #change{
   color: var(--foreground);
 }
-
+.scroll > svg > g > path{
+  fill: var(--accent);
+} 
+.scroll > svg > g > path{
+  stroke: var(--accent);
+}
 .arrowfill > svg > path{
   fill: var(--accent);
 }
 .arrowoutline > svg > path{
   stroke: var(--accent);
 }
-.logo > svg > path{
+/* .logo > svg > path{
   fill: var(--accent);
-}
+} */
 .inter >svg >  g > path{
   fill: var(--accent);
   stroke: var(--accent);
@@ -44,3 +49,9 @@
 /* .x2023{
   filter: blur(5px);
 } */
+
+[data-icon] {
+    font-size: 2rem;
+    color: var(--accent);
+    fill: var(--accent);
+}

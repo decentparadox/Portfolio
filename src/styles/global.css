@@ -11,8 +11,8 @@
   src: url(./fonts/Arame.ttf);
 }
 @font-face {
-  font-family: "Berghan";
-  src: url(./fonts/Geist-Regulare.otf);
+  font-family: "Exp";
+  src: url(./fonts/VaxenRoundedVF.ttf);
 }
 @layer base {
   html {
@@ -470,7 +470,7 @@ html.dark{
   color: var(--foreground);
 }
 .x2023{
-  font-family: "Kleemax";
+  font-family: "Exp";
   color: var(--accent);
 }
 .copyr > svg > path{

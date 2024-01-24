@@ -21,9 +21,6 @@ import Hero from 'src/components/Hero/Hero.astro'
 			<Projects />
 			<Footer />
 		</div>
-		<!-- <div class="container md:hidden">
-			<p>While I've made efforts to ensure a responsive design for various devices, the best viewing experience is achieved on larger screens. The layout and details are optimized to showcase my work more effectively on desktops or tablets. Feel free to explore, and for the optimal visual experience, consider switching to a device with a larger display. Thank you for visiting!</p>
-		</div> -->
 </Base>
 
 <script>
@@ -45,23 +42,7 @@ function raf(time:any) {
 
 requestAnimationFrame(raf);
 </script>
-<!-- <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script> -->
 
-<!-- <script>
-
-	ScrollTrigger.create({
-	  animation: gsap.from(".logo", {
-		y: "50vh",
-		scale: 6,
-		yPercent: -50,
-	  }),
-	  scrub: true,
-	  trigger: ".content",
-	  start: "top bottom",
-	  endTrigger: ".content",
-	  end: "top center",
-	});
-  </script> -->
 <style>
 	.container{
 		font-family: 'Geist';
