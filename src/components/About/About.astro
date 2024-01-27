@@ -4,7 +4,7 @@ import DesignSlider from "./DesignSlider.astro";
 ---
 
 <section class="leading-[130px]">
-    <div class="w-[94%] ml-[3%]">
+    <div class="w-[94%] m-auto">
         <div class="anim4 leading-11 " > 
             <div>
                 <h1 id="tobefitted">Bangalore <span>-</span> based</h1>
@@ -12,23 +12,23 @@ import DesignSlider from "./DesignSlider.astro";
             
         </div>
     </div>
-    <div class="anim4 w-[94%] ml-[3%] leading-8 ">
+    <div class="anim4 w-[94%] m-auto leading-8 ">
         <div> 
             <h1 id="tobefitted" >designer <span>&</span> developer </h1>
         </div>
     </div>
-    <div class=" anim4 w-[94%] ml-[3%]  leading-11">
+    <div class=" anim4 w-[94%] m-auto  leading-11">
         <div> 
             <h1 id="tobefitted" ><span> ਂ </span> crafting <span>digital</span> marvels</h1>
         </div>
     </div>
     <DesignSlider/>
-    <div class=" anim4 w-[94%] ml-[3%]  leading-11">
+    <div class=" anim4 w-[94%] m-auto  leading-13">
         <div> 
             <h1 id="tobefitted" >designs  <span> that ↑</span> i really  <span>♥</span> </h1>
         </div>
     </div>
-    <div class=" anim4 w-[94%] ml-[3%]  leading-6">
+    <div class=" anim4 w-[94%] m-auto  leading-6">
         <div> 
             <h1 id="tobefitted" >and projects that iam really  <span> proud ↭ </span> of  </h1>
         </div>
@@ -37,21 +37,24 @@ import DesignSlider from "./DesignSlider.astro";
 </section>
 <script>
     import fitty from "fitty"
-    
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
     const to_be_fitted = document.querySelectorAll("#tobefitted")
     fitty("#tobefitted")
-//     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-//     gsap.to(".anim4 div h1", {
-//   backgroundPositionX: "0%",
-//   stagger: 3,
-//   scrollTrigger: {
-//     trigger: ".anim4 div h1",
-//     scrub: 2,
-//     start: "top center",
-//     end: "bottom bottom",
-//   }
-// });
+    gsap.to(".anim4 div h1", {
+  backgroundPositionX: "0%",
+  stagger: 3,
+  scrollTrigger: {
+    trigger: ".anim4 div h1",
+    scrub: 2,
+    start: "top center",
+    end: "bottom bottom",
+  },
+  duration: 5,
+  ease: "power1.inOut",
+});
 
 
 </script>
@@ -59,12 +62,16 @@ import DesignSlider from "./DesignSlider.astro";
     #tobefitted > span{
         font-family: 'kleemax';
         text-transform: uppercase;
+        /* font-size: 4vw; */
     }
     h1{
         font-family: "Geist";
         text-transform: uppercase;
+        /* font-size: 9.5vw;
+        line-height: 0.75; */
     }
-   /* html.dark .anim4 > div > h1 {
+    /* 
+   html.dark .anim4 > div > h1 {
         background: linear-gradient(
     to right,
     var(--foreground),
@@ -90,6 +97,6 @@ import DesignSlider from "./DesignSlider.astro";
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  } */
-    
+  }
+     */
 </style>
