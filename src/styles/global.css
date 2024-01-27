@@ -22,33 +22,57 @@
     font-family: "Kleemax";
   }
   :root {
-    /* Gruvbox color palette with light background */
-    --background: #f9f5d7; /* Light background color */
-    --foreground: #282828;
+    /* EVA-01 color palette with light background */
+    --background: #98C0B5; /* Light background color */
+    --foreground: #1f2021;
     --muted: #3c3836;
     --muted-foreground: #d5c4a1;
     --popover: #504945;
-    --popover-foreground: #ebdbb2;
+    --popover-foreground: #EBDBB2;
     --card: #d5c4a1;
-    --card-foreground: #282828;
-    --border: #a89984;
+    --card-foreground: #1f2021;
+    --border: #000;
     --input: #504945;
-    --primary: #ebdbb2;
-    --primary-foreground: #282828;
+    --primary: #1f2021;
+    --primary-foreground: #ffffff;
     --secondary: #d5c4a1;
-    --secondary-foreground: #282828;
-    --accent: #d79921;
-    --accent-foreground: #282828;
-    --destructive: #cc241d;
-    --destructive-foreground: #282828;
-    --ring: #282828;
+    --secondary-foreground: #1f2021;
+    --accent: #916DCF;
+    --accent-foreground: #1f2021;
+    --destructive: #FBA109;
+    --destructive-foreground: #1f2021;
+    --ring: #1f2021;
     --radius: 0.5rem;
-    --hero-image: url(public/hero/hero_image_dark_gruvbox.png);
+    --hero-image: url(public/hero/hero_image_light_eva.png);
 }
 
 .dark {
-  --background: #282828; /* Dark background color */
-  --foreground: #f9f5d7;
+  --background: #1f2021; /* Dark background color 82DC47 */
+  --foreground: #98C0B5;
+  --muted: #3c3836;
+  --muted-foreground: #d5c4a1;
+  --popover: #504945;
+  --popover-foreground: #ebdbb2;
+  --card: #d5c4a1;
+  --card-foreground: #1f2021;
+  --border: #d6d6d6;
+  --input: #504945;
+  --primary: #1f2021;
+  --primary-foreground: #ffffff;
+  --secondary: #d5c4a1;
+  --secondary-foreground: #1f2021;
+  --accent: #916DCF;
+  --accent-foreground: #1f2021;
+  --destructive: #FBA109;
+  --destructive-foreground: #1f2021;
+  --ring: #1f2021;
+  --radius: 0.5rem;
+  --hero-image: url(public/hero/hero_image_dark_eva.png);
+
+}   
+ .gruvbox{
+  --background: #f9f5d7; /* Light background color */
+  --foreground: #282828;
   --muted: #3c3836;
   --muted-foreground: #d5c4a1;
   --popover: #504945;
@@ -56,20 +80,19 @@
   --card: #d5c4a1;
   --card-foreground: #282828;
   --border: #a89984;
-  --input: #f9f5d7;
-  --primary: #282828;
-  --primary-foreground: #ebdbb2;
-  --secondary: #504945;
-  --secondary-foreground: #ebdbb2;
+  --input: #504945;
+  --primary: #ebdbb2;
+  --primary-foreground: #282828;
+  --secondary: #d5c4a1;
+  --secondary-foreground: #282828;
   --accent: #d79921;
-  --accent-foreground: #ebdbb2;
+  --accent-foreground: #282828;
   --destructive: #cc241d;
-  --destructive-foreground: #ebdbb2;
-  --ring: #ebdbb2;
+  --destructive-foreground: #282828;
+  --ring: #282828;
   --radius: 0.5rem;
-  --hero-image: url(public/hero/hero_image_light_gruvbox.png);
-}   
- 
+  --hero-image: url(public/hero/hero_image_dark_gruvbox.png);
+ }
   .gruvbox.dark {
     --background: #282828; /* Dark background color */
     --foreground: #f9f5d7;
@@ -137,7 +160,7 @@
     --radius: 0.5rem;
 }
 .evangelion{
-  --background: #98C0B5; /* Light background color */
+    --background: #98C0B5; /* Light background color */
     --foreground: #1f2021;
     --muted: #3c3836;
     --muted-foreground: #d5c4a1;
