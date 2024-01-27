@@ -73,5 +73,17 @@ Use AstroSeo in all the pages you want different Seo than the index page
 <link rel='mask-icon' href='/favicons/safari-pinned-tab.svg' color='#ffffff' />
 <meta name='msapplication-TileColor' content='#ffffff' />
 <meta name='theme-color' content='#ffffff' />
+<script>
+   window.onload = function() {
+            // Check if the reload flag is not set
+            if (!localStorage.getItem('reloadFlag')) {
+                // Set the reload flag to true
+                localStorage.setItem('reloadFlag', 'true');
+                
+                // Reload the page after 1 second
+                    location.reload();
+                }
+            }
+</script>
 
 

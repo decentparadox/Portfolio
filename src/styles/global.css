@@ -390,6 +390,18 @@
 }
 }
  
+p::selection{
+  color: var(--background);
+  background-color: var(--accent)
+}
+h1::selection{
+  color: var(--background);
+  background-color: var(--accent)
+}
+span::selection{
+  color: var(--background);
+  background-color: var(--accent)
+}
 @layer base {
   * {
     @apply border-border;
