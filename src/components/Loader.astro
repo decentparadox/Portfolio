@@ -29,7 +29,7 @@
     let i = 0;
     const shuffleInterval = setInterval(() => {
       if (i < duration) {
-        counter.innerHTML = Math.random().toString(36).substring(2, 8);
+        counter.innerHTML = Math.random().toString(36).substring(2, 6);
         i++;
       } else {
         clearInterval(shuffleInterval);
@@ -114,7 +114,7 @@
     onComplete: () => {
       setTimeout(
         () =>
-          shuffleText("Decp", 20, () => {
+          shuffleText("DDox", 20, () => {
             setTimeout(removeLetters, 500);
           }),
         500
