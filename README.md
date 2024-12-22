@@ -20,8 +20,8 @@ astro-erudite is an opinionated, no-frills static blogging template built with [
 
 Below are some fantastic examples of websites based on this template. If you wish to add your site to this list, open a pull request!
 
-| Site | Author | Description/Features | Source |
-|------|--------|----------------------|--------|
+| Site                                 | Author                             | Description/Features                                                                         | Source                                     |
+| ------------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | [enscribe.dev](https://enscribe.dev) | [@jktrn](https://github.com/jktrn) | Heavily modified bento-style homepage with client interactivity, with custom MDX components! | [→](https://github.com/jktrn/enscribe.dev) |
 
 ## Features

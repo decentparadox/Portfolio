@@ -38,7 +38,7 @@ function ProjectItem({ name, imageSrc, link, desc, year }: ProjectProp) {
                 isHovered ? 'ml-32' : 'ml-0'
               }`}
             >
-              <h2 className="font-krypton pl-2 text-lg text-accent">{name}</h2>
+              <h2 className="pl-2 font-krypton text-lg text-accent">{name}</h2>
             </div>
           </div>
           <div className="hidden flex-[2] md:block">
@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <div className="w-100 relative  overflow-x-hidden font-mono">
       <div className="w-100 my-16">
-        <div className="font-krypton flex items-center justify-between opacity-75 pb-4">
+        <div className="flex items-center justify-between pb-4 font-krypton opacity-75">
           <h2 className="">(Projects)</h2>
           <a href="/projects" className="text-right">
             (See all projects)

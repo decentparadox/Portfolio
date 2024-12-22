@@ -8,7 +8,7 @@ import {
   transformerMetaHighlight,
   transformerNotationDiff,
 } from '@shikijs/transformers'
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrettyCode from 'rehype-pretty-code'
@@ -19,9 +19,12 @@ import sectionize from '@hbsnow/rehype-sectionize'
 
 import icon from 'astro-icon'
 
+import vercel from '@astrojs/vercel/serverless';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-erudite.vercel.app',
+  site: 'https://decentparadox.site',
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -31,6 +34,7 @@ export default defineConfig({
     react(),
     icon(),
   ],
+
   markdown: {
     syntaxHighlight: false,
     rehypePlugins: [
@@ -65,11 +69,28 @@ export default defineConfig({
     ],
     remarkPlugins: [remarkToc, remarkMath, remarkEmoji],
   },
+
+  env: {
+    schema: {
+      NEON_DATABASE_URL: envField.string({
+        context: 'server',
+        access: 'secret'
+      }),
+    }
+  },
+
   server: {
     port: 1234,
     host: true,
   },
+
   devToolbar: {
     enabled: false,
   },
+
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    }}),
 })

@@ -1,21 +1,13 @@
 ---
+import About from '@/components/About.astro'
 import BlogCard from '@/components/BlogCard.astro'
 import Container from '@/components/Container.astro'
-import About from '@/components/About.astro'
+import Hero from '@/components/Hero.astro'
 import Link from '@/components/Link.astro'
-import { buttonVariants } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import Projects from '@/components/Projects'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
-import Hero from '@/components/Hero.astro'
-import Projects from '@/components/Projects'
 const blog = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -29,16 +21,15 @@ const blog = (await getCollection('blog'))
     </section>
     <section>
       <About />
+      
     </section>
     <section>
-      <Projects client:load/>
+      <Projects client:load />
     </section>
     <section class="flex flex-col gap-y-4 font-mono">
       <div class="flex items-center justify-between font-krypton opacity-75">
         <h2 class="">(Latest posts)</h2>
-        <Link href="/blog" class="text-right">
-          (See all posts)
-        </Link>
+        <Link href="/blog" class="text-right"> (See all posts) </Link>
       </div>
       <ul class="not-prose flex flex-col gap-y-4">
         {

@@ -18,71 +18,77 @@ const authors = await parseAuthors(entry.data.authors ?? [])
 ---
 
 <div
-  class="group relative overflow-hidden not-prose border border-t-2 border-b-0 border-l-0 border-r-0 p-4 transition-colors duration-300 ease-in-out"
+  class="not-prose group relative overflow-hidden border border-b-0 border-l-0 border-r-0 border-t-2 p-4 transition-colors duration-300 ease-in-out"
 >
   <Link
     href={`/${entry.collection}/${entry.slug}`}
     class="flex flex-col gap-4 sm:flex-row"
   >
     <!-- Image Section -->
-    {entry.data.image && (
-      <div
-        class="relative max-w-[200px] sm:flex-shrink-0 transition-all duration-300 ease-in-out group-hover:scale-105"
-      >
-        <Image
-          src={entry.data.image}
-          alt={entry.data.title}
-          width={1200}
-          height={630}
-          class="object-cover w-0 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:w-[200px]"
-        />
-      </div>
-    )}
+    {
+      entry.data.image && (
+        <div class="relative max-w-[200px] transition-all duration-300 ease-in-out group-hover:scale-105 sm:flex-shrink-0">
+          <Image
+            src={entry.data.image}
+            alt={entry.data.title}
+            width={1200}
+            height={630}
+            class="w-0 object-cover opacity-0 transition-all duration-300 ease-in-out group-hover:w-[200px] group-hover:opacity-100"
+          />
+        </div>
+      )
+    }
 
     <!-- Text and Content Section -->
     <div
-      class="flex-grow transition-transform duration-300 md:-ml-7 ease-in-out md:group-hover:translate-x-8"
+      class="flex-grow transition-transform duration-300 ease-in-out md:-ml-7 md:group-hover:translate-x-8"
     >
       <h3 class="mb-1 font-krypton text-lg font-semibold text-accent">
         {entry.data.title}
       </h3>
-      <p class="max-w-lg mb-2 text-sm text-muted-foreground text-ellipsis">
+      <p class="mb-2 max-w-lg text-ellipsis text-sm text-muted-foreground">
         {entry.data.description}
       </p>
-      <div class="mb-2 flex flex-wrap items-center gap-x-2 text-xs text-muted-foreground">
-        {authors.length > 0 && (
-          <>
-            {authors.map((author) => (
-              <div class="flex items-center gap-x-1.5 text-accent">
-                <AvatarComponent
-                  client:load
-                  src={author.avatar}
-                  alt={author.name}
-                  fallback={author.name[0]}
-                  className="size-5 rounded-full"
-                />
-                <span>{author.name}</span>
-              </div>
-            ))}
-            <Separator orientation="vertical" className="h-4" />
-          </>
-        )}
+      <div
+        class="mb-2 flex flex-wrap items-center gap-x-2 text-xs text-muted-foreground"
+      >
+        {
+          authors.length > 0 && (
+            <>
+              {authors.map((author) => (
+                <div class="flex items-center gap-x-1.5 text-accent">
+                  <AvatarComponent
+                    client:load
+                    src={author.avatar}
+                    alt={author.name}
+                    fallback={author.name[0]}
+                    className="size-5 rounded-full"
+                  />
+                  <span>{author.name}</span>
+                </div>
+              ))}
+              <Separator orientation="vertical" className="h-4" />
+            </>
+          )
+        }
         <span class="text-accent">{formattedDate}</span>
         <Separator orientation="vertical" className="h-4" />
         <span class="text-accent">{readTime}</span>
       </div>
-      {entry.data.tags && (
-        <div class="flex flex-wrap gap-2">
-          {entry.data.tags.map((tag) => (
-            <Badge variant="secondary">{tag}</Badge>
-          ))}
-        </div>
-      )}
+      {
+        entry.data.tags && (
+          <div class="flex flex-wrap gap-2">
+            {entry.data.tags.map((tag) => (
+              <Badge variant="secondary">{tag}</Badge>
+            ))}
+          </div>
+        )
+      }
     </div>
 
     <!-- Arrow -->
     <p
-      class="hidden md:block absolute right-4 top-1/2 text-xl opacity-50 transition-transform duration-300 ease-in-out group-hover:translate-x-2 group-hover:opacity-100"
+      class="absolute right-4 top-1/2 hidden text-xl opacity-50 transition-transform duration-300 ease-in-out group-hover:translate-x-2 group-hover:opacity-100 md:block"
     >
       &#8599;
     </p>

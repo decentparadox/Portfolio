@@ -1,87 +1,90 @@
 ---
-import Link from "./Link.astro"
-import Bordered from "@/layouts/Bordered.astro"
-import Header from "./Header.astro"
+import Bordered from '@/layouts/Bordered.astro'
+import Link from './Link.astro'
 ---
 
-<main class="flex min-h-[calc(100vh-96px)]  flex-col items-center justify-between ">
-<div class=" my-auto h-auto w-full overflow-hidden">
-        <Bordered>
-            <div class="h-[300px] ">
-                <div class="flex h-full w-full items-center justify-center">
-                    <h1 class="font-vaxen absolute text-[64px] text-accent sm:text-[124px] md:text-[150px] xl:text-[240px] 2xl:text-[300px]">
-                        2025
-                    </h1>
-                    <p class="font-kleemax z-[2] text-[16px] text-foreground sm:text-[32px] md:text-[40px] xl:text-[64px] 2xl:text-[76px]">
-                        DECENTPARADOX
-                    </p>
-                </div>
-            </div>
-        </Bordered>
+<main
+  class="flex min-h-[calc(100vh-96px)] flex-col items-center justify-between"
+>
+  <div class="my-auto h-auto w-full overflow-hidden">
+    <Bordered>
+      <div class="h-[300px]">
+        <div class="flex h-full w-full items-center justify-center">
+          <h1
+            class="absolute font-vaxen text-[64px] text-accent sm:text-[124px] md:text-[150px] xl:text-[240px] 2xl:text-[300px]"
+          >
+            2025
+          </h1>
+          <p
+            class="z-[2] font-kleemax text-[16px] text-foreground sm:text-[32px] md:text-[40px] xl:text-[64px] 2xl:text-[76px]"
+          >
+            DECENTPARADOX
+          </p>
+        </div>
+      </div>
+    </Bordered>
 
     <div class="flex w-full items-center justify-between py-3">
-        <div class="flex w-[35%] justify-start hover:underline">
-            <p>
-                <Link href="/blog" class="hover:underline">BLOG  ↗ </Link>
-            </p>
-        </div>
-        <div class="flex w-[30%] justify-center text-center">
-            Web Developer
-        </div>
-        <div class="flex w-[35%] justify-end hover:underline">
-            <p class="text-right">
-                <Link href="/projects" class="hover:underline">↖  PROJECTS</Link>
-            </p>
-        </div>
+      <div class="flex w-[35%] justify-start hover:underline">
+        <p>
+          <Link href="/blog" class="hover:underline">BLOG ↗ </Link>
+        </p>
+      </div>
+      <div class="flex w-[30%] justify-center text-center">Web Developer</div>
+      <div class="flex w-[35%] justify-end hover:underline">
+        <p class="text-right">
+          <Link href="/projects" class="hover:underline">↖ PROJECTS</Link>
+        </p>
+      </div>
     </div>
-</div>
-<div class="flex h-auto w-full items-center justify-between">
+  </div>
+  <div class="flex h-auto w-full items-center justify-between">
     <div class="w-[30%]">
-        <img
-            src="./static/images/KeepScrolling.svg"
-            width={0}
-            height={0}
-            style={{ width: 'auto', height: '32px' }}
-            alt="keepScrolling"
-        />
+      <img
+        src="./static/images/KeepScrolling.svg"
+        width={0}
+        height={0}
+        style={{ width: 'auto', height: '32px' }}
+        alt="keepScrolling"
+      />
     </div>
     <div class="flex w-[40%] items-center justify-center gap-[96px]">
-        <div class="hidden sm:block">
-            <img
-                src="./static/images/Restricted.svg"
-                width={0}
-                height={0}
-                style={{ width: 'auto', height: '32px' }}
-                alt="keepScrolling"
-            />
-        </div>
-        <div>
+      <div class="hidden sm:block">
         <img
-            src="./static/images/logoAccent.svg"
-            width={0}
-            height={0}
-            style={{ width: 'auto', height: '32px' }}
-            alt="keepScrolling"
+          src="./static/images/Restricted.svg"
+          width={0}
+          height={0}
+          style={{ width: 'auto', height: '32px' }}
+          alt="keepScrolling"
         />
-        </div>
-        <div class="hidden sm:block">
-            <img
-                src="./static/images/International.svg"
-                width={0}
-                height={0}
-                style={{ width: 'auto', height: '32px' }}
-                alt="keepScrolling"
-            />
-        </div>
+      </div>
+      <div>
+        <img
+          src="./static/images/logoAccent.svg"
+          width={0}
+          height={0}
+          style={{ width: 'auto', height: '32px' }}
+          alt="keepScrolling"
+        />
+      </div>
+      <div class="hidden sm:block">
+        <img
+          src="./static/images/International.svg"
+          width={0}
+          height={0}
+          style={{ width: 'auto', height: '32px' }}
+          alt="keepScrolling"
+        />
+      </div>
     </div>
     <div class="flex w-[30%] justify-end">
-        <img
-            src="./static/images/BarcodeIG.svg"
-            width={0}
-            height={0}
-            style={{ width: 'auto', height: '32px' }}
-            alt="keepScrolling"
-        />
+      <img
+        src="./static/images/BarcodeIG.svg"
+        width={0}
+        height={0}
+        style={{ width: 'auto', height: '32px' }}
+        alt="keepScrolling"
+      />
     </div>
-</div>
+  </div>
 </main>

@@ -1,0 +1,27 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Container from '@/components/Container.astro'
+import Layout from '@/layouts/Layout.astro'
+import Bordered from '@/layouts/Bordered.astro'
+---
+
+<Layout title="Blog" description="Blog">
+  <Container class="flex grow flex-col gap-y-6">
+    <Breadcrumbs
+      items={[
+        { label: 'Projects', href: '/projects', icon: 'lucide:archive' },
+        {
+          label: 'kalser',
+          href: '/projects/kalser',
+          icon: 'lucide:sticky-note',
+        },
+      ]}
+    />
+
+    <Bordered>
+      <div class="h-[300px] flex items-center justify-center">
+        <h1 class="mb-4 font-mono text-accent text-3xl text-center font-bold">Casestudy coming soon</h1>
+        </div>
+    </Bordered>
+  </Container>
+</Layout>

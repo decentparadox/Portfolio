@@ -1,11 +1,23 @@
 <div class="flex flex-col items-center justify-start gap-[18px] self-stretch">
-    <div class="relative h-px self-stretch">
-        <div class="absolute left-[0px] top-[0px] box-border h-[50px] w-[50px] border-l-[1px] border-t-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]" />
-        <div class="absolute right-[0px] top-[0px] box-border h-[50px] w-[50px] border-r-[1px] border-t-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]" />
+  <div class="relative h-px self-stretch">
+    <div
+      class="absolute left-[0px] top-[0px] box-border h-[50px] w-[50px] border-l-[1px] border-t-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]"
+    >
     </div>
-    <slot />
-    <div class="relative h-px self-stretch">
-        <div class="absolute bottom-[1px] left-[0px] box-border h-[50px] w-[50px] border-b-[1px] border-l-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]" />
-        <div class="absolute bottom-[1px] right-[0px] box-border h-[50px] w-[50px] border-b-[1px] border-r-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]" />
+    <div
+      class="absolute right-[0px] top-[0px] box-border h-[50px] w-[50px] border-r-[1px] border-t-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]"
+    >
     </div>
+  </div>
+  <slot />
+  <div class="relative h-px self-stretch">
+    <div
+      class="absolute bottom-[1px] left-[0px] box-border h-[50px] w-[50px] border-b-[1px] border-l-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]"
+    >
+    </div>
+    <div
+      class="absolute bottom-[1px] right-[0px] box-border h-[50px] w-[50px] border-b-[1px] border-r-[1px] border-solid border-primary lg:h-[100px] lg:w-[100px]"
+    >
+    </div>
+  </div>
 </div>

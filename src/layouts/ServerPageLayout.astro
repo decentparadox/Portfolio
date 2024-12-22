@@ -1,0 +1,39 @@
+---
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import '@/styles/global.css'
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <title>Decentparadox | Sasank Reddy</title>
+    <meta name="title" content="Decentparadox | Sasank Reddy" />
+    <meta name="description" content="Portfolio of Sasank Reddy" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#121212" />
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="theme-color" content="#121212" />
+  </head>
+  <body>
+    <div
+      class="box-border flex h-fit min-h-screen flex-col gap-y-6 font-mono antialiased"
+    >
+      <Header />
+      <main class="flex-grow font-krypton">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

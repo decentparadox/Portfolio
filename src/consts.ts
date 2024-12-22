@@ -14,8 +14,7 @@ export type Link = {
 
 export const SITE: Site = {
   TITLE: 'DecentParadox | Sasank Reddy | Portfolio',
-  DESCRIPTION:
-    'Freelance web development and cybersecurity shenanigans',
+  DESCRIPTION: 'Freelance web development and cybersecurity shenanigans',
   EMAIL: 'hello@decentparadox.site',
   NUM_POSTS_ON_HOMEPAGE: 2,
   POSTS_PER_PAGE: 3,

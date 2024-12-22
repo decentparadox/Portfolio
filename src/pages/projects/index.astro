@@ -1,27 +1,16 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Container from '@/components/Container.astro'
-import PaginationComponent from '@/components/ui/pagination'
-import { SITE } from '@/consts'
-import Layout from '@/layouts/Layout.astro'
-import type { PaginateFunction } from 'astro'
-import { type CollectionEntry, getCollection } from 'astro:content'
 import Projects from '@/components/Projects'
-
-
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="Blog" description="Blog">
   <Container class="flex grow flex-col gap-y-6">
     <Breadcrumbs
-      items={[
-        { label: 'Projects', href: '/projects', icon: 'lucide:archive' },
-      ]}
+      items={[{ label: 'Projects', href: '/projects', icon: 'lucide:archive' }]}
     />
 
-    <Projects client:load/>
-
-
+    <Projects client:load />
   </Container>
 </Layout>

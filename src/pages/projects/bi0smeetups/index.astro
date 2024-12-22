@@ -33,7 +33,7 @@ import Layout from '@/layouts/Layout.astro'
           </div>
         </div>
         <div
-          class="w-full md:w-auto flex md:flex-col items-center gap-2 justify-between self-start text-right text-sm leading-loose tracking-tighter text-accent"
+          class="flex w-full items-center justify-between gap-2 self-start text-right text-sm leading-loose tracking-tighter text-accent md:w-auto md:flex-col"
         >
           <div>Product, UX/UI, Dev</div>
           <div class="self-end">2024-2025</div>
@@ -142,36 +142,40 @@ import Layout from '@/layouts/Layout.astro'
               aria-label="Meetup registration platform showcase"
               tabindex="0"
             >
-            
-            <div class="p-4 my-auto">
-              <div class="flex gap-5 max-md:flex-col">
-                <div class="flex flex-col w-[60%] max-md:ml-0 max-md:w-full">
+              <div class="my-auto p-4">
+                <div class="flex gap-5 max-md:flex-col">
+                  <div class="flex w-[60%] flex-col max-md:ml-0 max-md:w-full">
+                    <div
+                      class="my-auto mr-0 flex flex-col self-stretch text-2xl font-semibold leading-8 tracking-tighter text-white max-md:mt-10"
+                    >
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8732d430c6ba26ced5c35559f19c3700275918e49909eaa5b631877c39f228?placeholderIfAbsent=true&apiKey=ee661ca2f4a0429c903e88b171d50fcc"
+                        alt="bi0s Meetups App Logo"
+                        class="aspect-square w-[46px] rounded-none object-contain"
+                      />
+                      <div
+                        class="mt-12 max-md:mt-10"
+                        role="contentinfo"
+                        tabindex="0"
+                      >
+                        An app to streamline organizing meetups for bi0s
+                        Meetups, helped in creating and managing meetups
+                      </div>
+                    </div>
+                  </div>
                   <div
-                    class="flex flex-col self-stretch my-auto mr-0 text-2xl font-semibold tracking-tighter leading-8 text-white max-md:mt-10"
+                    class="ml-5 flex w-[40%] flex-col max-md:ml-0 max-md:w-full"
                   >
                     <img
                       loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8732d430c6ba26ced5c35559f19c3700275918e49909eaa5b631877c39f228?placeholderIfAbsent=true&apiKey=ee661ca2f4a0429c903e88b171d50fcc"
-                      alt="bi0s Meetups App Logo"
-                      class="object-contain rounded-none aspect-square w-[46px]"
+                      src="/static/images/bi0s-meetups/mobile-mockup.svg"
+                      alt="bi0s Meetups App Interface Screenshot"
+                      class="aspect-[1.53] w-full grow object-contain max-md:max-w-full"
                     />
-                    <div class="mt-12 max-md:mt-10" role="contentinfo" tabindex="0">
-                      An app to streamline organizing meetups for bi0s Meetups, helped in
-                      creating and managing meetups
-                    </div>
                   </div>
                 </div>
-                <div class="flex flex-col ml-5 w-[40%] max-md:ml-0 max-md:w-full">
-                  <img
-                    loading="lazy"
-                    src="/static/images/bi0s-meetups/mobile-mockup.svg"
-                    alt="bi0s Meetups App Interface Screenshot"
-                    class="object-contain grow w-full aspect-[1.53] max-md:max-w-full"
-                  />
-                </div>
               </div>
-            </div>
-
             </div>
           </div>
           <div class="ml-5 flex w-6/12 flex-col max-md:ml-0 max-md:w-full">
@@ -184,7 +188,7 @@ import Layout from '@/layouts/Layout.astro'
                 centralized and professional platform for registrations.
               </div>
               <div
-                class="mt-60 text-6xl leading-none tracking-tighter max-md:mt-10 max-md:text-4xl text-accent font-krypton"
+                class="mt-60 font-krypton text-6xl leading-none tracking-tighter text-accent max-md:mt-10 max-md:text-4xl"
                 aria-label="Over 800 active users"
               >
                 800+
@@ -197,13 +201,15 @@ import Layout from '@/layouts/Layout.astro'
         </div>
       </div>
       <div
-        class="mt-12 flex w-full flex-col overflow-hidden rounded-xl text-center font-semibold font-sans text-zinc-900 max-md:mt-10 max-md:max-w-full"
+        class="mt-12 flex w-full flex-col overflow-hidden rounded-xl text-center font-sans font-semibold text-zinc-900 max-md:mt-10 max-md:max-w-full"
       >
         <div
           class="flex w-full flex-col items-center rounded-lg rounded-b-none bg-[#7bffc7] px-80 py-12 max-md:max-w-full max-md:px-5"
           tabindex="0"
         >
-          <div class="text-lg leading-none tracking-tighter max-md:max-w-full font-medium">
+          <div
+            class="text-lg font-medium leading-none tracking-tighter max-md:max-w-full"
+          >
             Recognizing this opportunity, we aimed to enhance the visual
             identity of each meetup and asked
           </div>
@@ -282,9 +288,7 @@ import Layout from '@/layouts/Layout.astro'
         </div>
         <div class="flex gap-1">
           <div class="w-1 bg-accent"></div>
-          <div
-            class="flex min-h-[72px] max-w-full flex-col pl-7 "
-          >
+          <div class="flex min-h-[72px] max-w-full flex-col pl-7">
             <div
               class="text-sm font-semibold leading-none tracking-tighter text-white"
               tabindex="0"
@@ -297,13 +301,12 @@ import Layout from '@/layouts/Layout.astro'
             >
               External tools like Google Forms limit the control over user
               experience, data handling, and branding. A custom solution would
-              provide complete ownership, ensuring a seamless, on-brand experience
-              for participants.
+              provide complete ownership, ensuring a seamless, on-brand
+              experience for participants.
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </Container>
 </Layout>
