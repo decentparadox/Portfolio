@@ -19,8 +19,7 @@ import sectionize from '@hbsnow/rehype-sectionize'
 
 import icon from 'astro-icon'
 
-import vercel from '@astrojs/vercel/serverless';
-
+import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://decentparadox.site',
@@ -89,9 +88,6 @@ export default defineConfig({
   },
 
   output: 'server',
-  adapter: vercel({
-    imageService: true,
-    webAnalytics: {
-      enabled: true,
-    }}),
+  adapter: netlify(),
+    
 })
