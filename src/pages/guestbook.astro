@@ -1,107 +1,136 @@
 ---
-export const prerender = false;
-import { neon } from '@neondatabase/serverless'
-import Container from '@/components/Container.astro';
-import Layout from '@/layouts/ServerPageLayout.astro';
+export const prerender = false
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
-import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
+import Container from '@/components/Container.astro'
+import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea';
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card"
+import { Textarea } from '@/components/ui/textarea'
+import Layout from '@/layouts/ServerPageLayout.astro'
+import { neon } from '@neondatabase/serverless'
 
 const sql = neon(import.meta.env.NEON_DATABASE_URL)
-const req = Astro.request;
+const req = Astro.request
 
 function sanitize(input: string) {
-	return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return input.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 if (
-	req.method === 'POST' &&
-	req.headers.get('Content-Type') === 'application/x-www-form-urlencoded'
+  req.method === 'POST' &&
+  req.headers.get('Content-Type') === 'application/x-www-form-urlencoded'
 ) {
-
-	    const data = new URLSearchParams(await req.text());
-        console.log("Searching for: " + data)
-		const name = sanitize(data.get('name')?.trim() ?? '');
-		const url = sanitize(data.get('link')?.trim() ?? '');
-		const message = sanitize(data.get('message')?.trim() ?? '');
-		const anon = data.get('anonymous') === 'on';
-		if (
-			name &&
-			name?.length <= 64 &&
-			(!url || url.includes('://')) &&
-			url.length <= 128 &&
-			message.length <= 320
-		) {
-			const timestamp = Date.now();
-			// CREATE TABLE entries (name TEXT, timestamp INTEGER, url TEXT, message TEXT)
-			const result = await sql`
+  const data = new URLSearchParams(await req.text())
+  console.log('Searching for: ' + data)
+  const name = sanitize(data.get('name')?.trim() ?? '')
+  const url = sanitize(data.get('link')?.trim() ?? '')
+  const message = sanitize(data.get('message')?.trim() ?? '')
+  const anon = data.get('anonymous') === 'on'
+  if (
+    name &&
+    name?.length <= 64 &&
+    (!url || url.includes('://')) &&
+    url.length <= 128 &&
+    message.length <= 320
+  ) {
+    const timestamp = Date.now()
+    // CREATE TABLE entries (name TEXT, timestamp INTEGER, url TEXT, message TEXT)
+    const result = await sql`
     INSERT INTO "Guestbook" ("name", "socialLink", "message", "isAnonymous", "createdAt")
     VALUES (${name}, ${url || null}, ${message}, ${anon}, ${timestamp});
   `
-  console.log(result)
-		}
-	}
+    console.log(result)
+  }
+}
 
-
-const result = await sql`SELECT * FROM "Guestbook" ORDER BY "Guestbook"."createdAt" DESC`
+const result =
+  await sql`SELECT * FROM "Guestbook" ORDER BY "Guestbook"."createdAt" DESC`
 console.log(result)
 ---
-<Layout>
-<Container >
-  <Breadcrumbs items={[{ label: 'Guestbook', icon: 'lucide:signature' }]} />
 
-	<div class="w-full md:min-w-[36rem] pt-4 font-mono">
-		<h1 class="mb-4 font-krypton text-3xl font-bold">Guestbook</h1>
-    <Card className="bg-[#1e1e1e] border-zinc-700 mb-8">
-      <CardContent className="p-2">
-		<form id="guestbookForm" method="post" class="card mb-4 grid w-full items-start gap-1 p-3">
-      <Input id="name" placeholder="Name" type="text" name="name" required/>
-      <Input id="link" placeholder="Link to web/social media presence" type="url" name="link" />
-      <Textarea
-      placeholder="Message"
-      className=" min-h-[120px]"
-      name='message'
-    />
-     
-			<div class="flex gap-2 items-center">
-        <input class="mt-0.5" type="checkbox" id="formAnonymous" name="anonymous" />
-				<label for="formAnonymous">Submit anonymously?</label>
-			</div>
-			<input class="mt-3 justify-self-center bg-accent w-full" id="submitButton" type="submit" value="Submit" />
-		</form>
-  </CardContent>
-</Card>
-		<ul class="grid gap-1">
-			{
-				result?.map((e) => (
- 					<li class="card grid items-center gap-y-1 p-4 border border-b-0 border-l-0 border-r-0 border-t-2">
-						{e.socialLink ? (
-							<a class="row-start-1" rel="ugc" href={e.socialLink} target="_blank">
-								<h2 class="text-h4 text-accent">{e.isAnonymous ? "Anonymous" : e.name}</h2>
-							</a>
-						) : (
-							<h2 class="row-start-1 text-h4">{e.isAnonymous ? "Anonymous" : e.name}</h2>
-						)}
-						<span class="row-start-1 justify-self-end text-neutral-500 dark:text-neutral-400">
-              {Intl.DateTimeFormat(undefined).format(e.createdAt)}
-						</span>
-						{e.message && <p set:html={e.message}></p>}
-					</li>
-				))
-			}
-		</ul>
-	</div>
-	<script is:inline>
-		const submitButton = document.querySelector('#submitButton');
-		document.forms[0].addEventListener('submit', () => {
-			submitButton.disabled = true;
-		});
-	</script>
-</Container>
+<Layout>
+  <Container>
+    <Breadcrumbs items={[{ label: 'Guestbook', icon: 'lucide:signature' }]} />
+
+    <div class="w-full pt-4 font-mono md:min-w-[36rem]">
+      <h1 class="mb-4 font-krypton text-3xl font-bold">Guestbook</h1>
+      <Card className="mb-8 border-zinc-700 bg-[#1e1e1e]">
+        <CardContent className="p-2">
+          <form
+            id="guestbookForm"
+            method="post"
+            class="card mb-4 grid w-full items-start gap-1 p-3"
+          >
+            <Input
+              id="name"
+              placeholder="Name"
+              type="text"
+              name="name"
+              required
+            />
+            <Input
+              id="link"
+              placeholder="Link to web/social media presence"
+              type="url"
+              name="link"
+            />
+            <Textarea
+              placeholder="Message"
+              className=" min-h-[120px]"
+              name="message"
+            />
+
+            <div class="flex items-center gap-2">
+              <input
+                class="mt-0.5"
+                type="checkbox"
+                id="formAnonymous"
+                name="anonymous"
+              />
+              <label for="formAnonymous">Submit anonymously?</label>
+            </div>
+            <input
+              class="mt-3 w-full justify-self-center bg-accent"
+              id="submitButton"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </CardContent>
+      </Card>
+      <ul class="grid gap-1">
+        {
+          result?.map((e) => (
+            <li class="card grid items-center gap-y-1 border border-b-0 border-l-0 border-r-0 border-t-2 p-4">
+              {e.socialLink ? (
+                <a
+                  class="row-start-1"
+                  rel="ugc"
+                  href={e.socialLink}
+                  target="_blank"
+                >
+                  <h2 class="text-h4 text-accent">
+                    {e.isAnonymous ? 'Anonymous' : e.name}
+                  </h2>
+                </a>
+              ) : (
+                <h2 class="text-h4 row-start-1">
+                  {e.isAnonymous ? 'Anonymous' : e.name}
+                </h2>
+              )}
+              <span class="row-start-1 justify-self-end text-neutral-500 dark:text-neutral-400">
+                {Intl.DateTimeFormat(undefined).format(e.createdAt)}
+              </span>
+              {e.message && <p set:html={e.message} />}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <script is:inline>
+      const submitButton = document.querySelector('#submitButton')
+      document.forms[0].addEventListener('submit', () => {
+        submitButton.disabled = true
+      })
+    </script>
+  </Container>
 </Layout>

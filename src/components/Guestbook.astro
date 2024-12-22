@@ -1,108 +1,131 @@
 ---
-export const prerender = false;
+export const prerender = false
+import Container from '@/components/Container.astro'
 import { neon } from '@neondatabase/serverless'
-import Container from '@/components/Container.astro';
-import { formatDate } from '../lib/utils';
+import { formatDate } from '../lib/utils'
 const sql = neon(import.meta.env.NEON_DATABASE_URL)
 interface Entry {
-	name: string;
-	timestamp: number;
-	url: string;
-	message: string;
+  name: string
+  timestamp: number
+  url: string
+  message: string
 }
 
-const req = Astro.request;
+const req = Astro.request
 
 function sanitize(input: string) {
-	return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return input.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 if (
-	req.method === 'POST' &&
-	req.headers.get('Content-Type') === 'application/x-www-form-urlencoded'
+  req.method === 'POST' &&
+  req.headers.get('Content-Type') === 'application/x-www-form-urlencoded'
 ) {
-
-	    const data = new URLSearchParams(await req.text());
-        console.log("Searching for: " + data)
-		const name = sanitize(data.get('name')?.trim() ?? '');
-		const url = sanitize(data.get('link')?.trim() ?? '');
-		const message = sanitize(data.get('message')?.trim() ?? '');
-		const anon = data.get('anonymous') === 'on';
-		if (
-			name &&
-			name?.length <= 64 &&
-			(!url || url.includes('://')) &&
-			url.length <= 128 &&
-			message.length <= 320
-		) {
-			const timestamp = Date.now();
-			// CREATE TABLE entries (name TEXT, timestamp INTEGER, url TEXT, message TEXT)
-			const result = await sql`
+  const data = new URLSearchParams(await req.text())
+  console.log('Searching for: ' + data)
+  const name = sanitize(data.get('name')?.trim() ?? '')
+  const url = sanitize(data.get('link')?.trim() ?? '')
+  const message = sanitize(data.get('message')?.trim() ?? '')
+  const anon = data.get('anonymous') === 'on'
+  if (
+    name &&
+    name?.length <= 64 &&
+    (!url || url.includes('://')) &&
+    url.length <= 128 &&
+    message.length <= 320
+  ) {
+    const timestamp = Date.now()
+    // CREATE TABLE entries (name TEXT, timestamp INTEGER, url TEXT, message TEXT)
+    const result = await sql`
     INSERT INTO "Guestbook" ("name", "socialLink", "message", "isAnonymous", "createdAt")
     VALUES (${name}, ${url || null}, ${message}, ${anon}, ${timestamp});
   `
-  console.log(result)
-		}
-	}
+    console.log(result)
+  }
+}
 
-
-const result = await sql`SELECT * FROM "Guestbook" ORDER BY "Guestbook"."createdAt" DESC`
+const result =
+  await sql`SELECT * FROM "Guestbook" ORDER BY "Guestbook"."createdAt" DESC`
 console.log(result)
 ---
 
-<Container >
-	<div class="w-full md:min-w-[36rem]">
-		<h1 class="mb-2">Guestbook</h1>
-		<form id="guestbookForm" method="post" class="card mb-4 grid w-full items-start gap-1 p-3">
-			<input class="p-1" type="text" name="name" placeholder="Name" maxlength="64" required />
-			<input
-				type="url"
-				name="link"
-				maxlength="128"
-				placeholder="Link to web/social media presence"
-			/>
-			<textarea
-				class="h-28 resize-y"
-				style="margin-bottom:0"
-				name="message"
-				placeholder="Message"
-				maxlength="320"></textarea>
-			<div class="grid w-fit grid-cols-[auto_1em] items-stretch gap-2">
-				<label for="formAnonymous">Submit anonymously?</label>
-				<input class="mt-0.5" type="checkbox" id="formAnonymous" name="anonymous" />
-			</div>
-			<small class="text-caption italic">
-				When you press Submit, your IP address, derived country code, and user agent will be logged
-				for spam detection purposes. If you'd like this to be deleted (or your entry modified or
-				removed), contact me using any of the links at the <a href="/">homepage</a>.
-			</small>
-			<input class="mt-3 justify-self-center" id="submitButton" type="submit" value="Submit" />
-		</form>
-		<hr class="mb-3" />
-		<ul class="grid gap-1">
-			{
-				result?.map((e) => (
-					<li class="card grid items-center gap-y-1 p-4">
-						{e.url ? (
-							<a class="row-start-1" rel="ugc" href={e.url} target="_blank">
-								<h2 class="text-h4">{e.name}</h2>
-							</a>
-						) : (
-							<h2 class="row-start-1 text-h4">{e.name}</h2>
-						)}
-						<span class="row-start-1 justify-self-end text-neutral-500 dark:text-neutral-400">
-							{formatDate(new Date(e.timestamp))}
-						</span>
-						{e.message && <p>{e.message}</p>}
-					</li>
-				))
-			}
-		</ul>
-	</div>
-	<script>
-		const submitButton = document.querySelector('#submitButton') as HTMLInputElement;
-		document.forms[0].addEventListener('submit', () => {
-			submitButton.disabled = true;
-		});
-	</script>
-</BaseLayout>
+<Container>
+  <div class="w-full md:min-w-[36rem]">
+    <h1 class="mb-2">Guestbook</h1>
+    <form
+      id="guestbookForm"
+      method="post"
+      class="card mb-4 grid w-full items-start gap-1 p-3"
+    >
+      <input
+        class="p-1"
+        type="text"
+        name="name"
+        placeholder="Name"
+        maxlength="64"
+        required
+      />
+      <input
+        type="url"
+        name="link"
+        maxlength="128"
+        placeholder="Link to web/social media presence"
+      />
+      <textarea
+        class="h-28 resize-y"
+        style="margin-bottom:0"
+        name="message"
+        placeholder="Message"
+        maxlength="320"></textarea>
+      <div class="grid w-fit grid-cols-[auto_1em] items-stretch gap-2">
+        <label for="formAnonymous">Submit anonymously?</label>
+        <input
+          class="mt-0.5"
+          type="checkbox"
+          id="formAnonymous"
+          name="anonymous"
+        />
+      </div>
+      <small class="text-caption italic">
+        When you press Submit, your IP address, derived country code, and user
+        agent will be logged for spam detection purposes. If you'd like this to
+        be deleted (or your entry modified or removed), contact me using any of
+        the links at the <a href="/">homepage</a>.
+      </small>
+      <input
+        class="mt-3 justify-self-center"
+        id="submitButton"
+        type="submit"
+        value="Submit"
+      />
+    </form>
+    <hr class="mb-3" />
+    <ul class="grid gap-1">
+      {
+        result?.map((e) => (
+          <li class="card grid items-center gap-y-1 p-4">
+            {e.url ? (
+              <a class="row-start-1" rel="ugc" href={e.url} target="_blank">
+                <h2 class="text-h4">{e.name}</h2>
+              </a>
+            ) : (
+              <h2 class="text-h4 row-start-1">{e.name}</h2>
+            )}
+            <span class="row-start-1 justify-self-end text-neutral-500 dark:text-neutral-400">
+              {formatDate(new Date(e.timestamp))}
+            </span>
+            {e.message && <p>{e.message}</p>}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <script>
+    const submitButton = document.querySelector(
+      '#submitButton',
+    ) as HTMLInputElement
+    document.forms[0].addEventListener('submit', () => {
+      submitButton.disabled = true
+    })
+  </script>
+</Container>

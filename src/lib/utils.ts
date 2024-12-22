@@ -6,23 +6,23 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
 export const getDateSuffix = (day: number) => {
   if (day > 3 && day < 21) return 'th' // Special case for 11th-13th
   return ['th', 'st', 'nd', 'rd'][day % 10] || 'th'
 }
 
 const options: Intl.DateTimeFormatOptions = {
-	dateStyle: 'medium'
-};
+  dateStyle: 'medium',
+}
 
 const longOptions: Intl.DateTimeFormatOptions = {
-	dateStyle: 'long'
-};
+  dateStyle: 'long',
+}
 
 export function formatDate(date: Date, long?: boolean): string {
-  
-	return Intl.DateTimeFormat(undefined, long ? longOptions : options).format(date);
+  return Intl.DateTimeFormat(undefined, long ? longOptions : options).format(
+    date,
+  )
 }
 
 export const formatDateByTimeZone = (date: Date) => {
@@ -33,7 +33,7 @@ export const formatDateByTimeZone = (date: Date) => {
     hour: 'numeric',
     minute: '2-digit',
     hour12: true,
-    timeZone: 'Asia/Kolkata'
+    timeZone: 'Asia/Kolkata',
   })
 }
 
@@ -47,8 +47,6 @@ export function readingTime(html: string) {
   const readingTimeMinutes = (wordCount / 200 + 1).toFixed()
   return `${readingTimeMinutes} min read`
 }
-
-
 
 export async function parseAuthors(authors: string[]) {
   if (!authors || authors.length === 0) return []

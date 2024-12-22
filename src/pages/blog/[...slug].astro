@@ -5,6 +5,7 @@ import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
 import PostNavigation from '@/components/PostNavigation.astro'
 import TableOfContents from '@/components/TableOfContents.astro'
+import AvatarComponent from '@/components/ui/avatar'
 import { badgeVariants } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -96,12 +97,12 @@ const authors = await parseAuthors(post.data.authors ?? [])
                   <div class="flex items-center gap-x-2">
                     {authors.map((author) => (
                       <div class="flex items-center gap-x-1.5">
-                        <Image
+                        <AvatarComponent
+                          client:load
                           src={author.avatar}
                           alt={author.name}
-                          width={24}
-                          height={24}
-                          class="rounded-full"
+                          fallback={author.name[0]}
+                          className="size-6 rounded-full"
                         />
                         {author.isRegistered ? (
                           <Link

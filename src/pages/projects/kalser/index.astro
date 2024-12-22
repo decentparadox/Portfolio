@@ -1,8 +1,8 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Container from '@/components/Container.astro'
-import Layout from '@/layouts/Layout.astro'
 import Bordered from '@/layouts/Bordered.astro'
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="Blog" description="Blog">
@@ -19,9 +19,11 @@ import Bordered from '@/layouts/Bordered.astro'
     />
 
     <Bordered>
-      <div class="h-[300px] flex items-center justify-center">
-        <h1 class="mb-4 font-mono text-accent text-3xl text-center font-bold">Casestudy coming soon</h1>
-        </div>
+      <div class="flex h-[300px] items-center justify-center">
+        <h1 class="mb-4 text-center font-mono text-3xl font-bold text-accent">
+          Casestudy coming soon
+        </h1>
+      </div>
     </Bordered>
   </Container>
 </Layout>

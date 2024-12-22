@@ -19,7 +19,7 @@ import sectionize from '@hbsnow/rehype-sectionize'
 
 import icon from 'astro-icon'
 
-import netlify from '@astrojs/netlify';
+import netlify from '@astrojs/netlify'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://decentparadox.site',
@@ -73,9 +73,9 @@ export default defineConfig({
     schema: {
       NEON_DATABASE_URL: envField.string({
         context: 'server',
-        access: 'secret'
+        access: 'secret',
       }),
-    }
+    },
   },
 
   server: {
@@ -89,5 +89,4 @@ export default defineConfig({
 
   output: 'server',
   adapter: netlify(),
-    
 })

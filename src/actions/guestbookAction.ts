@@ -1,4 +1,4 @@
-"use server"
+'use server'
 import { neon } from '@neondatabase/serverless'
 
 interface GuestbookEntry {
