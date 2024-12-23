@@ -2,18 +2,14 @@ import { Astro } from '@/icons/Astro'
 import { Docker } from '@/icons/Docker'
 import { Drizzle } from '@/icons/Drizzle'
 import { Hono } from '@/icons/Hono'
-import { Jest } from '@/icons/Jest'
-import { Nestjs } from '@/icons/NestJs'
 import { NextJs } from '@/icons/NextJs'
-import { Nuxtjs } from '@/icons/NuxtJs'
 import { Prisma } from '@/icons/Prisma'
 import { Puppeteer } from '@/icons/Puppeteer'
 import { ReactJs } from '@/icons/ReactJs'
-import { Reactquery } from '@/icons/ReactQuery'
 import { Swr } from '@/icons/Swr'
 import { Tailwindcss } from '@/icons/Tailwind'
 import { TypeScript } from '@/icons/TypeScript'
-import { Vuejs } from '@/icons/VueJs'
+import { Figma } from '@/icons/Figma'
 import type { JSX, SVGProps } from 'react'
 
 type TechStack = {
@@ -36,14 +32,14 @@ const techStacks: TechStack[] = [
       'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
   },
   {
-    name: 'React Native',
-    icon: ReactJs,
+    name: 'Figma',
+    icon: Figma,
     description:
       'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
   },
   {
-    name: 'React Query',
-    icon: Reactquery,
+    name: 'React Native',
+    icon: ReactJs,
     description:
       'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
   },
@@ -66,12 +62,6 @@ const techStacks: TechStack[] = [
       'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
   },
   {
-    name: 'Jest',
-    icon: Jest,
-    description:
-      'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
-  },
-  {
     name: 'Prisma',
     icon: Prisma,
     description:
@@ -84,12 +74,6 @@ const techStacks: TechStack[] = [
       'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
   },
   {
-    name: 'Nest',
-    icon: Nestjs,
-    description:
-      'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
-  },
-  {
     name: 'Hono',
     icon: Hono,
     description:
@@ -98,18 +82,6 @@ const techStacks: TechStack[] = [
   {
     name: 'Astro',
     icon: Astro,
-    description:
-      'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
-  },
-  {
-    name: 'Vue',
-    icon: Vuejs,
-    description:
-      'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
-  },
-  {
-    name: 'Nuxt',
-    icon: Nuxtjs,
     description:
       'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
   },
