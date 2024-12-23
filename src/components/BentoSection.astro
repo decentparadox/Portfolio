@@ -1,0 +1,83 @@
+---
+export const prerender = true
+import GithubCalendar from './GithubCalendar'
+import SpotifyPresence from './SpotifyPresence'
+import TechStacks from './TechStacks'
+---
+
+<div class="flex w-full max-w-full flex-col">
+  <div
+    role="region"
+    aria-label="Github Section"
+    class="flex h-[270px] w-full flex-col items-start gap-4 overflow-scroll whitespace-nowrap rounded-lg bg-white/5 px-2 py-2 text-xs leading-loose text-white max-md:max-w-full max-md:pt-4 md:h-[300px]"
+  >
+    <div class="flex h-full w-full items-center justify-center overflow-scroll">
+      <GithubCalendar client:load username="decentparadox" />
+    </div>
+
+    <div
+      tabindex="0"
+      class="overflow-hidden rounded-3xl bg-white bg-opacity-5 px-7 py-2 max-md:px-5"
+    >
+      Github
+    </div>
+  </div>
+  <div
+    class="mt-2 flex h-1/3 w-full max-w-full flex-wrap items-end gap-2 max-md:max-w-full"
+  >
+    <div
+      class="flex h-full min-w-[240px] max-w-[976px] flex-1 shrink basis-4 flex-col"
+    >
+      <div
+        role="tablist"
+        class="flex h-auto w-full items-center gap-2 whitespace-nowrap text-sm leading-none text-black"
+      >
+        <a href="/currently">
+          <button
+            role="tab"
+            aria-selected="true"
+            tabindex="0"
+            class="my-auto flex-1 shrink self-stretch overflow-hidden rounded-3xl bg-white px-8 py-1.5 max-md:px-5"
+          >
+            Currently
+          </button>
+        </a>
+        <a href="/defaults">
+          <button
+            role="tab"
+            aria-selected="false"
+            tabindex="0"
+            class="my-auto flex-1 shrink self-stretch overflow-hidden rounded-3xl bg-white px-9 py-1.5 max-md:px-5"
+          >
+            Defaults
+          </button>
+        </a>
+      </div>
+      <div
+        role="region"
+        aria-label="Tech Stack Section"
+        class="mt-2 flex max-w-full flex-1 flex-col items-end justify-center gap-4 overflow-hidden rounded-lg bg-white/5 px-2 py-2 text-xs leading-loose text-white max-md:pt-24"
+      >
+        <h1 class="hidden text-xl">Tech Stack that I use</h1>
+        <div
+          class="w-fit min-w-[240px] max-w-[960px] flex-grow place-content-center overflow-hidden"
+        >
+          <TechStacks client:load />
+        </div>
+        <div
+          tabindex="0"
+          class="overflow-hidden rounded-3xl bg-white bg-opacity-5 px-4 py-2"
+        >
+          Tech Stack
+        </div>
+      </div>
+    </div>
+    <div
+      role="region"
+      aria-label="Spotify Section"
+      class="flex h-[170px] min-w-[500px] flex-1 flex-col items-start whitespace-nowrap rounded-lg bg-white/5 px-2 py-2 text-xs leading-loose text-white max-md:w-full max-md:min-w-full"
+    >
+      <SpotifyPresence client:load />
+    </div>
+  </div>
+</div>

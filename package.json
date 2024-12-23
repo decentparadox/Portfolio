@@ -1,5 +1,5 @@
 {
-  "name": "astro-erudite",
+  "name": "decentparadox",
   "type": "module",
   "version": "1.1.9",
   "private": true,
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/cloudflare": "^12.1.0",
     "@astrojs/markdown-remark": "^5.2.0",
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/netlify": "^6.0.1",
@@ -60,7 +59,9 @@
     "prop-types": "^15.8.1",
     "query-string": "^9.1.1",
     "react": "^18.3.1",
+    "react-activity-calendar": "^2.7.5",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
     "react-leaflet": "^5.0.0",
     "react-signature-canvas": "^1.0.6",
     "react-sketch-canvas": "^6.2.0",

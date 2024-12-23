@@ -1,0 +1,26 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Container from '@/components/Container.astro'
+import Bordered from '@/layouts/Bordered.astro'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+  title="Currently"
+  description="Currently working on | Now Page as some might call it"
+>
+  <Container class="flex grow flex-col gap-y-6">
+    <Breadcrumbs
+      items={[
+        { label: 'Currently', href: '/currently', icon: 'lucide:archive' },
+      ]}
+    />
+    <Bordered>
+      <div class="flex h-[300px] items-center justify-center">
+        <h1 class="mb-4 text-center font-mono text-3xl font-bold text-accent">
+          coming soon
+        </h1>
+      </div>
+    </Bordered>
+  </Container>
+</Layout>

@@ -6,6 +6,19 @@ const config: Config = {
   content: ['./src/**/*.{astro,md,mdx,ts,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        marquee: {
+          from: {
+            transform: 'translateX(0)',
+          },
+          to: {
+            transform: 'translateX(calc(-100% - var(--gap)))',
+          },
+        },
+      },
+      animation: {
+        marquee: 'marquee var(--duration) infinite linear',
+      },
       fontFamily: {
         sans: ['Geist', ...defaultTheme.fontFamily.sans],
         mono: ['Geist Mono', ...defaultTheme.fontFamily.mono],

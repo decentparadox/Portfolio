@@ -1,20 +1,32 @@
+---
+import BentoSection from './BentoSection.astro'
+---
+
 <section class="w-100 my-0 mt-16 font-mono">
   <div class="ml-auto flex w-full gap-[10rem]">
-    <div class="about-col flex flex-col gap-4 text-justify">
+    <div class="about-col flex w-full flex-col gap-4 text-justify">
       <div class="flex items-center justify-between font-krypton opacity-75">
         <h2 class="">(About me)</h2>
         <a href="/about" class="text-right"> (Know me better) </a>
       </div>
-      <p>
-        Hey, I'm Sasank Reddy, but you can call me "DecentParadox." I'm studying
-        Computer Science at Amrita School of Engineering. I like designing and
-        coding, and sometimes I play CTFs. I also have fun making challenges for
-        CTFs.
-      </p>
-      <p>
-        I'm a student who loves learning. I may not have a fancy mission, but my
-        passion for gaining knowledge and mastering new skills keeps me going.
-      </p>
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-1 flex-col gap-4">
+          <p>
+            Hey, I'm Sasank Reddy, but you can call me "DecentParadox." I'm
+            studying Computer Science at Amrita School of Engineering. I like
+            designing and coding, and sometimes I play CTFs. I also have fun
+            making challenges for CTFs.
+          </p>
+          <p>
+            I'm a student who loves learning. I may not have a fancy mission,
+            but my passion for gaining knowledge and mastering new skills keeps
+            me going.
+          </p>
+        </div>
+        <div>
+          <BentoSection />
+        </div>
+      </div>
     </div>
   </div>
 </section>
