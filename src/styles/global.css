@@ -207,3 +207,28 @@ canvas {
   width: 100%;
   border-radius: 8px;
 }
+
+
+* {
+  scrollbar-width: none;
+  scrollbar-color: var(--accent) #1f2021;
+}
+
+*::-webkit-scrollbar {
+  width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #1f2021;
+  border-radius: 14px;
+  border: 3px solid var(--accent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
