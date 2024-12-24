@@ -3,9 +3,25 @@ export const prerender = true
 import GithubCalendar from './GithubCalendar'
 import SpotifyPresence from './SpotifyPresence'
 import TechStacks from './TechStacks'
----
+import { getCollection } from 'astro:content'
+import AuthorCard from '@/components/AuthorCard.astro'
 
-<div class="flex w-full max-w-full flex-col">
+const authors = await getCollection('authors')
+---
+{
+    authors.length > 0 ? (
+      <ul class="not-prose flex flex-col gap-4">
+        {authors.map((author) => (
+          <li>
+            <AuthorCard author={author} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-center text-muted-foreground">No authors found.</p>
+    )
+  }
+<div class="flex w-full max-w-full flex-col mt-4">
   <div
     role="region"
     aria-label="Github Section"
