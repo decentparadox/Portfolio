@@ -33,15 +33,18 @@ const SpotifyPresence = () => {
 
   if (isLoading) {
     return (
-      <div className="relative flex h-full w-full flex-col justify-between rounded-3xl pb-2">
-        <Skeleton className="mb-2 h-[55%] w-[55%] rounded-xl" />
-        <div className="flex min-w-0 flex-1 flex-col justify-end overflow-hidden">
+      <div className="relative flex h-full w-full justify-between gap-4 rounded-3xl pb-2">
+        <Skeleton className="mb-2 rounded-xl w-28 h-28 max-h-32 max-w-32" />
+        <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
           <div className="flex flex-col gap-2">
             <Skeleton className="h-4 w-3/4" />
-            <Skeleton className="h-2 w-2/3" />
+            <Skeleton className="h-6 w-2/3" />
+            <Skeleton className="h-2 w-1/3" />
+            <Skeleton className="h-2 w-1/3" />
+
           </div>
         </div>
-        <div className="absolute right-0 top-0 m-3 text-primary">
+        <div className="absolute right-0 top-0 m-3 text-accent">
           <FaSpotify size={32} />
         </div>
         <Skeleton className="absolute bottom-0 right-0 m-3 h-10 w-10 rounded-full" />
@@ -96,7 +99,7 @@ const SpotifyPresence = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-0 top-0 m-3 hidden text-primary md:block ">
+      <div className="absolute right-0 top-0 m-3 hidden text-accent md:block ">
         <FaSpotify size={32} />
       </div>
       <a

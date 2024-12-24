@@ -15,7 +15,7 @@ interface Props extends Omit<ActivityCalendarProps, 'data' | 'theme'> {
 
 async function fetchCalendarData(username: string): Promise<ApiResponse> {
   const response = await fetch(
-    `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
+    `https://github-contributions-api.jogruber.de/v4/${username}?y=2024`,
   )
   const data: ApiResponse | ApiErrorResponse = await response.json()
 
@@ -64,7 +64,13 @@ const GithubCalendar: FunctionComponent<Props> = ({ username, ...props }) => {
   }
 
   if (loading || !data) {
-    return <Skeleton className="h-full w-full rounded-lg" />
+    return <div className='h-full w-full rounded-lg flex flex-col gap-4'>
+            <Skeleton className="h-[90%] w-full rounded-lg" />
+            <div className='w-full items-center justify-between hidden md:flex'>
+              <Skeleton className="h-4 w-48" />
+              <Skeleton className="h-4 w-32" />
+            </div>
+  </div>
   }
 
   return (
