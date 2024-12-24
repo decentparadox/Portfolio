@@ -42,7 +42,7 @@ const SpotifyPresence = () => {
           </div>
         </div>
         <div className="absolute right-0 top-0 m-3 text-primary">
-          <FaSpotify size={56} />
+          <FaSpotify size={32} />
         </div>
         <Skeleton className="absolute bottom-0 right-0 m-3 h-10 w-10 rounded-full" />
       </div>
@@ -97,7 +97,7 @@ const SpotifyPresence = () => {
         </div>
       </div>
       <div className="absolute right-0 top-0 m-3 hidden text-primary md:block ">
-        <FaSpotify size={56} />
+        <FaSpotify size={32} />
       </div>
       <a
         href={url}

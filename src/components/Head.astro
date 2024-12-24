@@ -61,7 +61,7 @@ const { title, description, image = '/static/twitter-card.png' } = Astro.props
       }
       return window.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
-        : 'theme-light'
+        : 'dark'
     }
     const isDark = getThemePreference() === 'dark'
     document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
