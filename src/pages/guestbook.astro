@@ -2,6 +2,7 @@
 export const prerender = false
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Container from '@/components/Container.astro'
+import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -53,7 +54,7 @@ console.log(result)
 
     <div class="w-full pt-4 font-mono md:min-w-[36rem]">
       <h1 class="mb-4 font-krypton text-3xl font-bold">Guestbook</h1>
-      <Card className="mb-8 border-zinc-700 bg-[#1e1e1e]">
+      <Card className="mb-8 border">
         <CardContent className="p-2">
           <form
             id="guestbookForm"
@@ -88,12 +89,12 @@ console.log(result)
               />
               <label for="formAnonymous">Submit anonymously?</label>
             </div>
-            <input
-              class="mt-3 w-full justify-self-center bg-accent"
+            <Button
+              className="mt-3 w-full justify-self-center bg-accent text-background hover:text-foreground py-1 rounded-md"
               id="submitButton"
               type="submit"
               value="Submit"
-            />
+            >Submit</Button>
           </form>
         </CardContent>
       </Card>
