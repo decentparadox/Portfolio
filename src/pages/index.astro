@@ -5,6 +5,7 @@ import Container from '@/components/Container.astro'
 import Hero from '@/components/Hero.astro'
 import Link from '@/components/Link.astro'
 import Projects from '@/components/Projects'
+import Contact from '@/components/Contact.astro'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
@@ -39,6 +40,9 @@ const blog = (await getCollection('blog'))
           ))
         }
       </ul>
+    </section>
+    <section>
+      <Contact />
     </section>
   </Container>
 </Layout>

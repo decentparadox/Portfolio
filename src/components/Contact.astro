@@ -1,0 +1,48 @@
+---
+import Link from './Link.astro'
+---
+
+<div class="h-full w-full font-mono">
+  <div class="flex items-center justify-between pb-4 font-krypton opacity-75">
+    <h2 class="">(Contact)</h2>
+    <a href="/guestbook" class="text-right"> (Sign my guestbook) </a>
+  </div>
+  <div class="flex  gap-6 flex-col-reverse md:flex-row items-end justify-between">
+    <div class="flex w-full h-full flex-col gap-4 justify-between mx-auto md:mx-0">
+      <p class="text-accent text-center md:text-left">hello@decentparadox.site</p>
+      <div class="flex gap-8 flex-wrap">
+        <div class="flex flex-col gap-2">
+          <p class="font-krypton opacity-75">Links</p>
+          <Link href="https://github.com/decentparadox">
+            <p>Github</p>
+          </Link>
+          <Link href="https://twitter.com/0xdecentparadox">
+            <p>Twitter</p>
+          </Link>
+          <p>discord</p>
+          <Link href="https://t.me/decentparadox">
+            <p>Telegram</p>
+          </Link>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-krypton opacity-75">Role</p>
+          <p>CTF Player</p>
+          <p>App Developer</p>
+          <p>Design engineer</p>
+          <p>Full Stack Developer</p>
+        </div>
+        <div class="flex h-full flex-col justify-between">
+          <p class="font-krypton opacity-75">Agency</p>
+          <div>
+            <p>Kryfin</p>
+            <p>Luminiscent Labs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-right text-8xl w-full flex items-start justify-start md:justify-end text-accent ">
+        <img src="/static/images/mascot.svg" class="hidden md:block" alt="">
+        <img src="/static/images/mascot-wide.svg" class="block md:hidden h-full aspect-auto mx-auto" alt="">
+    </div>
+  </div>
+</div>
