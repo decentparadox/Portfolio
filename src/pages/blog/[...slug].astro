@@ -155,7 +155,7 @@ const authors = await parseAuthors(post.data.authors ?? [])
       {headings.length > 0 && <TableOfContents headings={headings} />}
 
       <article
-        class="prose prose-neutral col-start-2 max-w-none dark:prose-invert"
+        class="prose prose-neutral max-w-screen-xl text-sm col-start-2 m-auto dark:prose-invert"
       >
         <Content />
       </article>

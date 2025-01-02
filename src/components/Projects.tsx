@@ -18,7 +18,7 @@ function ProjectItem({ name, imageSrc, link, desc, year }: ProjectProp) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <a href={`/projects/${link}`}>
-        <div className="flex h-28 w-full justify-between border-t-2  pt-6 font-mono">
+        <div className="flex h-28 w-full justify-between border-t-2  pt-2 font-mono">
           <div className="relative flex flex-[4] overflow-hidden md:w-[300px]">
             <div
               className={`absolute left-0 top-0 mr-4 h-full w-32 overflow-hidden transition-all duration-300 ease-in-out ${

@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Container from '@/components/Container.astro'
+import Link from '@/components/Link.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
@@ -311,6 +312,230 @@ import Layout from '@/layouts/Layout.astro'
           </div>
         </div>
       </div>
+      <div
+        class="text-sm mt-6 flex flex-col gap-4 leading-5 tracking-tighter text-stone-300 max-md:max-w-full"
+        tabindex="0"
+      >
+        <p>
+          So, we all agreed to keep the website&#39;s look consistent. It took
+          me almost a week to finish the design, set up the site, and pick the
+          content. Since this was my first big project, I&#39;m thinking of
+          writing a blog about the process and why I made those decisions.
+        </p>
+        <p>
+          The entire website got rewritten twice. At first, I used Astro, but
+          since it&#39;s a niche framework, I realized it might be hard for
+          others to manage the site later on. So, I switched to Next.js. This
+          was also the first site I created entirely from scratch, no templates
+          or themes used.
+        </p>
+        <p>
+          Apart from the awesome dynamic themes using CSS variables — check out <Link
+            href="https://bi0smeetup.in/meetups/8"
+            class="text-accent">https://bi0smeetup.in/meetups/8</Link
+          > and play around with the number 8, going down to 1 — and the custom shadcn
+          UI components that perfectly fit the site&#39;s theme, there&#39;s not
+          a lot more to say about the frontend.
+        </p>
+        <p>
+          So, the website is actually built using a full TypeScript stack. We
+          use Prisma and Neon PostgreSQL db for data storage, and Next Auth for
+          authentication. Our aim was to set up something like Luma but with
+          more control over our development. If you take a look at the user
+          experience flow, you&#39;ll see it&#39;s similar to Luma, and we did
+          borrow some of their UI too. And hey, if anyone from Luma is reading
+          this, you all made an awesome web app! However, because of our design
+          scheme, we had to start from scratch.
+        </p>
+        <div
+          class="text-2xl font-semibold leading-none tracking-tighter text-white"
+          tabindex="0"
+        >
+          Starting with data storage
+        </div>
+        <p>
+          Back when we didn&#39;t have authentication, we simply took form
+          responses and added them to Prisma. We relied on the <code
+            >useLocalStorage</code
+          > hook for state management. I realize this wasn&#39;t ideal as it impacted
+          everything. It was also inefficient because a user could forget they registered
+          for an event and try to register again from a different device. Since the
+          venue provider had limited seats, we had to opt for authentication.
+        </p>
+        <p>
+          So, I decided to go with React Hook Form and Zod for form validation
+          because they&#39;re super light and easy to use. Zod&#39;s validation
+          based on schemas is neat and lets me handle all validation in one
+          place, which I find better than dealing with it in each input field
+          separately.
+        </p>
+        <p>
+          I went with <code>useLocalStorageState</code> to check user registration.
+          It&#39;s a super handy hook for keeping state in sync with local storage,
+          even surviving page refreshes. This ensures users don&#39;t lose their
+          registration info if they accidentally refresh, a nice touch for user experience.
+        </p>
+        <p>
+          In hindsight, it turned out to be a bad idea. Users can&#39;t tell if
+          they registered from different devices, and without an expiry date,
+          the next meetup page might still show you as registered.
+        </p>
+        <p>
+          Working with various meetups, I utilized the URL slug to dynamically
+          load specific information for each event—such as fonts, colors, and
+          descriptions. This allows each event page to have its own unique style
+          while maintaining the site&#39;s consistency. Also, manually
+          hard-coding all meetups would have been cumbersome—it&#39;s much
+          easier to manage and scale this way.
+        </p>
+
+        <div
+          class="text-2xl font-semibold leading-none tracking-tighter text-white"
+          tabindex="0"
+        >
+          so what&#39;s next? Auth?
+        </div>
+        <p>
+          Let&#39;s talk about UX. I&#39;m not someone who delved into human
+          philosophy to grasp user experience, but having to fill out forms
+          every time during testing made me question its necessity. There was a
+          point when we debated the need for authentication on a meetup page
+          that simply displayed event information. However, we realized
+          authentication was essential for future paid workshops, setting a
+          strong foundation. Meetups will always remain free, but we aim to
+          provide workshop materials exclusively to attendees rather than making
+          them public—although with some website tinkering, you could still
+          access them.
+        </p>
+        <p>
+          The code is pretty much copied from the Next Auth docs website and
+          adjusted to include onboarding features that will be added later. We
+          plan to request users for their phone number, preferably WhatsApp, to
+          send an RSVP message via the bot. Also, we&#39;d like to collect
+          LinkedIn profiles to understand the industry and university
+          distribution of our users.
+        </p>
+        <div
+          class="text-2xl font-semibold leading-none tracking-tighter text-white"
+          tabindex="0"
+        >
+          stuff like emails and QR
+        </div>
+        <p>
+          We wanted to make signing up even easier by sending confirmation
+          emails right after users register. We used <strong>Resend</strong> with
+          <strong>React Email</strong> to send personalized emails. This gives users
+          instant confirmation and adds a nice touch to the experience.
+        </p>
+        <p>
+          Additionally, we came up with a cool idea for event management - a <strong
+            >QR code check-in system</strong
+          >. Users receive a unique QR code in their confirmation email,
+          allowing them to check in by simply scanning it at the event. This
+          speeds up the check-in process, makes it contactless, and helps us
+          keep track of attendance efficiently. By automating emails and using
+          QR codes, we&#39;re streamlining our processes and ensuring smooth
+          operations on event day.
+        </p>
+      </div>
+      <section
+        class="flex max-w-[842px] mt-8 flex-col text-sm tracking-tighter"
+        aria-labelledby="reflection-title"
+      >
+        <h2
+          id="reflection-title"
+          class="text-2xl font-semibold leading-none tracking-tighter text-white"
+        >
+          Reflection:
+        </h2>
+        <p class="mt-6 leading-5 text-stone-300 max-md:max-w-full">
+          Working on this website for bi0s Meetups has been so fulfilling.
+          I&#39;ve picked up a ton of new skills, from creating a system
+          that&#39;s both practical and visually appealing to handling data
+          storage and improving user experience with features like
+          authentication, emails, and QR code check-ins. It really made me
+          rethink how event registration and management should be done, and
+          I&#39;m really happy with the result. Each obstacle was a chance to
+          learn something fresh, whether it was about frontend design or backend
+          choices to ensure the platform can grow smoothly. I&#39;m really
+          looking forward to what&#39;s next and how this project will keep
+          evolving as our meetups expand! Reflecting on the process, I recognize
+          my growth as a designer and developer through these three key lessons:
+        </p>
+        <article
+          class="mt-6 flex w-full gap-2"
+        >
+        <div class="w-1 bg-accent"></div>
+        <div class="flex w-full flex-col items-start py-1 px-2 max-md:max-w-full max-md:pl-5">
+
+          <h3
+            class="text-sm font-semibold leading-none tracking-tighter text-white"
+          >
+            Mastering the art of creating unique experiences:
+          </h3>
+          <p class="mt-4 leading-5 text-stone-300 max-md:max-w-full">
+            By designing distinct themes for every meetup, including unique
+            color schemes, font styles, and tailored graphics, I understood the
+            value of branding in fostering engagement. This practice not only
+            amplified the platform's visual appeal but also strengthened its
+            identity.
+          </p>
+          <p class="mt-2 leading-loose text-accent max-md:max-w-full">
+            I grew to appreciate the power of intentional design in creating
+            memorable user experiences.
+          </p>
+        </div>
+        </article>
+        <article
+          class="mt-6 flex w-full gap-2 "
+        >
+        <div class="w-1 bg-accent"></div>
+        <div class="flex w-full flex-col items-start py-1 px-2 max-md:max-w-full max-md:pl-5">
+
+          <h3
+            class="text-sm font-semibold leading-none tracking-tighter text-white"
+          >
+            Balancing creativity with functionality:
+          </h3>
+          <p class="mt-4 leading-5 text-stone-300 max-md:max-w-full">
+            Developing a platform for seamless registration and information
+            sharing required striking a balance between aesthetics and
+            usability. I learned to prioritize functionality while ensuring the
+            platform retained its innovative and professional look.
+          </p>
+          <p
+            class="mt-2 leading-loose text-accent max-md:mt-10 max-md:max-w-full"
+          >
+            I grew to merge creativity with practicality, crafting designs that
+            resonate with users.
+          </p>
+          </div>
+        </article>
+        <article
+          class="mt-6 flex w-full gap-2"
+        >
+        <div class="w-1 bg-accent"></div>
+        <div class="flex w-full flex-col items-start py-1 px-2 max-md:max-w-full max-md:pl-5">
+          <h3
+            class="text-sm font-semibold leading-none tracking-tighter text-white"
+          >
+            Scalability and adaptability:
+          </h3>
+          <p class="mt-4 leading-5 text-stone-300 max-md:max-w-full">
+            Transforming a simple idea into a scalable platform that serves
+            hundreds of users demanded a deep understanding of flexibility and
+            growth. This experience honed my ability to design and develop
+            systems that adapt to evolving needs while maintaining consistency.
+          </p>
+          <p
+            class="mt-2 leading-loose text-accent max-md:mt-10 max-md:max-w-full"
+          >
+            I grew to think long-term, creating solutions that sustain and scale
+            effortlessly.
+          </p>
+        </div>
+        </article>
+      </section>
     </div>
   </Container>
 </Layout>
