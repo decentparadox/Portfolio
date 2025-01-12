@@ -1,0 +1,25 @@
+---
+import Layout from "./Layout.astro";
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Container from '@/components/Container.astro'
+import { string } from "astro:schema";
+
+interface Props {
+	title?: string;
+	description?: string;
+    slug?: string;
+}
+
+const { title, description, slug } =
+	((Astro.props as any)['frontmatter'] as Props) || Astro.props;
+---
+<Layout title={title as string} description={description as string}>
+    <Container class="flex grow flex-col gap-y-6 font-mono">
+        <Breadcrumbs
+          items={[
+            { label: title as string, href: `/${slug}`, icon: 'lucide:file-text' },
+          ]}
+        />
+        <slot />
+    </Container>
+</Layout>
