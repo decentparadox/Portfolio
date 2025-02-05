@@ -22,7 +22,7 @@ import icon from 'astro-icon'
 import netlify from '@astrojs/netlify'
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://decentparadox.site',
+  site: 'https://decentparadox.me',
 
   integrations: [
     tailwind({

@@ -15,10 +15,10 @@ export type Link = {
 export const SITE: Site = {
   TITLE: 'DecentParadox | Sasank Reddy | Portfolio',
   DESCRIPTION: 'Freelance web development and cybersecurity shenanigans',
-  EMAIL: 'hello@decentparadox.site',
+  EMAIL: 'hello@decentparadox.me',
   NUM_POSTS_ON_HOMEPAGE: 2,
   POSTS_PER_PAGE: 3,
-  SITEURL: 'https://decentparadox.site',
+  SITEURL: 'https://decentparadox.me',
 }
 
 export const NAV_LINKS: Link[] = [
@@ -31,6 +31,6 @@ export const NAV_LINKS: Link[] = [
 export const SOCIAL_LINKS: Link[] = [
   { href: 'https://github.com/decentparadox', label: 'GitHub' },
   { href: 'https://twitter.com/0xdecentparadox', label: 'Twitter' },
-  { href: 'hello@decentparadox.site', label: 'Email' },
+  { href: 'hello@decentparadox.me', label: 'Email' },
   { href: '/rss.xml', label: 'RSS' },
 ]
